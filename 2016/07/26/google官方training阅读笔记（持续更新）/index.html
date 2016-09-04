@@ -1,0 +1,855 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今日翻看胡凯大神的官方training的翻译版本，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。
+Get Started1、在EditText中想要在用户没有输入时给出提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="google官方training阅读笔记（持续更新）">
+<meta property="og:url" content="http://fupinyou.com/2016/07/26/google官方training阅读笔记（持续更新）/index.html">
+<meta property="og:site_name" content="加速度猫">
+<meta property="og:description" content="今日翻看胡凯大神的官方training的翻译版本，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。
+Get Started1、在EditText中想要在用户没有输入时给出提">
+<meta property="og:updated_time" content="2016-07-26T11:05:56.617Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="google官方training阅读笔记（持续更新）">
+<meta name="twitter:description" content="今日翻看胡凯大神的官方training的翻译版本，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。
+Get Started1、在EditText中想要在用户没有输入时给出提">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> google官方training阅读笔记（持续更新） | 加速度猫 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">加速度猫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/分类" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/标签" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/关于" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                google官方training阅读笔记（持续更新）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T14:48:08+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/26/google官方training阅读笔记（持续更新）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/google官方training阅读笔记（持续更新）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今日翻看胡凯大神的官方training的<a href="http://hukai.me/android-training-course-in-chinese" target="_blank" rel="external">翻译版本</a>，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。</p>
+<h3 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h3><p>1、在EditText中想要在用户没有输入时给出提示信息，可以使用android:hint=”@string/edit_message”。</p>
+<p>2、使用android:layout_weight=”1”，即根据权重来计算各个组件的宽度，使得填满手机屏幕的宽度。这是组件的宽度还应该设为android:layout_width=”0dp”，如果设置成wrap_content，这时的宽度属性也起不到任何作用。如果给View设置了match_parent的属性，那么上面计算权重时则不是通常的正比，而是反比，也就是权重值大的反而占据空间小。</p>
+<a id="more"></a>
+<p>3、button有个onclick属性android:onClick=”sendMessage”，这样当点击它就会去执行sendMessage方法，这个方法有三个限制：</p>
+<ul>
+<li>必须是public的</li>
+<li>返回类型必须是void</li>
+<li>有且仅有一个参数，而且参数必须是View</li>
+</ul>
+<p>不过我觉得这个并不常用，看看就行了。很多时候我们是在button上添加点击事件的监听器来实现的。</p>
+<p>4、支持多国语言，在res/中创建一个额外的values目录以连字符和ISO语言代码结尾命名，比如values-es/ 是为语言代码为”es”的区域设置的简单的资源文件的目录。<br>比如，西班牙语所在的文件，/values-es/strings.xml:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span>Mi Aplicación<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"hello_world"</span>&gt;</span>Hola Mundo!<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>5、res目录下各个文件的含义，注意名字不要随便更改，否则即使路径正确也会提示找不到你的资源。</p>
+<p>animator/ : 用于定义属性动画的 XML 文件。<br>anim/ : 定义渐变动画的 XML 文件。（属性动画也可以保存在此目录中，但是为了区分这两种类型，属性动画首选 animator/ 目录。）<br>color/ ：用于定义颜色状态列表的 XML 文件。<br>drawable/ ：位图文件（.png、.9.png、.jpg、.gif）或编译为以下 Drawable 资源子类型的 XML 文件：位图文件、九宫格（可调整大小的位图）、状态列表、形状、动画Drawable、其他Drawable<br>mipmap/ ：适用于不同启动器图标密度的 Drawable 文件。<br>menu/ ：用于定义应用菜单（如选项菜单、上下文菜单或子菜单）的 XML 文件。<br>raw/ ： 要以原始形式保存的任意文件。要使用原始 InputStream 打开这些资源，请使用资源 ID（即 R.raw.filename）调用 Resources.openRawResource()。但是，如需访问原始文件名和文件层次结构，则可以考虑将某些资源保存在 assets/ 目录下（而不是 res/raw/）。assets/ 中的文件没有资源 ID，因此您只能使用 AssetManager 读取这些文件。<br>values/ ： 包含字符串、整型数和颜色等简单值的 XML 文件。其他 res/ 子目录中的 XML 资源文件是根据 XML 文件名定义单个资源，而目录中的 values/ 文件可描述多个资源。由于每个资源均用其自己的 XML 元素定义，因此您可以根据自己的需要命名文件，并将不同的资源类型放在一个文件中。但是，为了清晰起见，您可能需要将独特的资源类型放在不同的文件中。 例如，对于可在此目录中创建的资源，下面给出了相应的文件名约定：<br>    arrays.xml：用于资源数组（类型化数组）。<br>    colors.xml：颜色值。<br>    dimens.xml：尺寸值。<br>    strings.xml：字符串值。<br>    styles.xml：样式。<br>xml/ ： 可以在运行时通过调用 Resources.getXML() 读取的任意 XML 文件。各种 XML 配置文件（如可搜索配置）都必须保存在此处。</p>
+<p>6、有4种普遍尺寸：小(small)，普通(normal)，大(large)，超大(xlarge)。4种普遍分辨率：低精度(ldpi), 中精度(mdpi), 高精度(hdpi), 超高精度(xhdpi)。创建不同的layout，目录以-(screen_size)为后缀命名。例如，对大尺寸屏幕(large screens)，一个唯一的layout文件应该保存在res/layout-large/中。但是在引用的时候依然是R.layout.XXX，系统会根据不同的设备去加载合适的文件，值得注意的是，要保证在各个目录下都要有相同名字的文件。官方还建议在你的所有的activity中都用toolbar来当作app bar。在你的manifest.xml中将application声明为<strong>NoActionBar</strong>的主题来禁用原生的actionBar，因为在Android 3.0（API level 11）使用的默认主题都是含有actionbar的。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span></span></div><div class="line">    <span class="attr">android:theme</span>=<span class="string">"@style/Theme.AppCompat.Light.NoActionBar"</span></div><div class="line">    /&gt;</div></pre></td></tr></table></figure>
+<p>在layout文件中引用toolbar组件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></div><div class="line">   <span class="attr">android:id</span>=<span class="string">"@+id/my_toolbar"</span></div><div class="line">   <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">   <span class="attr">android:layout_height</span>=<span class="string">"?attr/actionBarSize"</span></div><div class="line">   <span class="attr">android:background</span>=<span class="string">"?attr/colorPrimary"</span></div><div class="line">   <span class="attr">android:elevation</span>=<span class="string">"4dp"</span></div><div class="line">   <span class="attr">android:theme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.ActionBar"</span></div><div class="line">   <span class="attr">app:popupTheme</span>=<span class="string">"@style/ThemeOverlay.AppCompat.Light"</span>/&gt;</div></pre></td></tr></table></figure>
+<p>然后在oncreate方法中调用setSupportActionBar：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_my);</div><div class="line">    Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);</div><div class="line">    setSupportActionBar(myToolbar);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="Best-Practices-For-User-Interface"><a href="#Best-Practices-For-User-Interface" class="headerlink" title="Best Practices For User Interface"></a>Best Practices For User Interface</h3><p>1、actionBar由于兼容性问题，已经被toolbar所取代。首先你要在SDK manager中下载兼容包v7 appcompat，然后是你的activity继承AppCompatActivity。</p>
+<p>2、在toolbar中添加button，写在res/menu/目录下。多余的放置不下的button将进入menu，也可以显式的指定它一直在menu中收起来：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">menu</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span> &gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- "Mark Favorite", should appear as action button if possible --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/action_favorite"</span></div><div class="line">        <span class="attr">android:icon</span>=<span class="string">"@drawable/ic_favorite_black_48dp"</span></div><div class="line">        <span class="attr">android:title</span>=<span class="string">"@string/action_favorite"</span></div><div class="line">        <span class="attr">app:showAsAction</span>=<span class="string">"ifRoom"</span>/&gt;</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- Settings, should always be in the overflow --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">android:id</span>=<span class="string">"@+id/action_settings"</span></span></div><div class="line">          <span class="attr">android:title</span>=<span class="string">"@string/action_settings"</span></div><div class="line">          <span class="attr">app:showAsAction</span>=<span class="string">"never"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">menu</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>其中，ifRoom表示如果还有空间，就将该item展示出来；如果没有空间的话，就将它收起来放在堆叠的item菜单中。item的点击事件作出响应逻辑写在onOptionsItemSelected中。当点击某个item时，系统会回调这个函数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onOptionsItemSelected</span><span class="params">(MenuItem item)</span> </span>&#123;</div><div class="line">    <span class="keyword">switch</span> (item.getItemId()) &#123;</div><div class="line">        <span class="keyword">case</span> R.id.action_settings:</div><div class="line">            <span class="comment">// User chose the "Settings" item, show the app settings UI...</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        <span class="keyword">case</span> R.id.action_favorite:</div><div class="line">            <span class="comment">// User chose the "Favorite" action, mark the current item</span></div><div class="line">            <span class="comment">// as a favorite...</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="comment">// If we got here, the user's action was not recognized.</span></div><div class="line">            <span class="comment">// Invoke the superclass to handle it.</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.onOptionsItemSelected(item);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3、在tool bar添加返回箭头，官方叫做up Action。实现方法是在配置文件中指定一个父activity。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">application</span> <span class="attr">...</span> &gt;</span></div><div class="line">    ...</div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- The main/home activity (it has no parent activity) --&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">activity</span></span></div><div class="line">        <span class="attr">android:name</span>=<span class="string">"com.example.myfirstapp.MainActivity"</span> <span class="attr">...</span>&gt;</div><div class="line">        ...</div><div class="line">    <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- A child of the main activity --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">activity</span></span></div><div class="line">        <span class="attr">android:name</span>=<span class="string">"com.example.myfirstapp.MyChildActivity"</span></div><div class="line">        <span class="attr">android:label</span>=<span class="string">"@string/title_activity_child"</span></div><div class="line">        <span class="attr">android:parentActivityName</span>=<span class="string">"com.example.myfirstapp.MainActivity"</span> &gt;</div><div class="line"></div><div class="line">        <span class="comment">&lt;!-- Parent activity meta-data to support 4.0 and lower --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">            <span class="attr">android:name</span>=<span class="string">"android.support.PARENT_ACTIVITY"</span></div><div class="line">            <span class="attr">android:value</span>=<span class="string">"com.example.myfirstapp.MainActivity"</span> /&gt;</div><div class="line">    <span class="tag">&lt;/<span class="name">activity</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span></div><div class="line">Enable the Up Button</div></pre></td></tr></table></figure>
+<p>android:parentActivityName属性是Android 4.1 (API level 16)才加入的，要想支持低版本的设备，还需要添加meta-data，它是一个键值对，name是固定的android.support.PARENT_ACTIVITY，value是你想要返回到的activity的路径。到这里还没完，还需要在代码中激活这个button。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_my_child);</div><div class="line"></div><div class="line">    <span class="comment">// my_child_toolbar is defined in the layout file</span></div><div class="line">    Toolbar myChildToolbar =</div><div class="line">        (Toolbar) findViewById(R.id.my_child_toolbar);</div><div class="line">    setSupportActionBar(myChildToolbar);</div><div class="line"></div><div class="line">    <span class="comment">// Get a support ActionBar corresponding to this toolbar</span></div><div class="line">    ActionBar ab = getSupportActionBar();</div><div class="line"></div><div class="line">    <span class="comment">// Enable the Up button</span></div><div class="line">    ab.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>链接：<a href="https://developer.android.com/training/appbar/up-action.html" target="_blank" rel="external">Up Action</a></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/26/Android中的Application类及其用法/" rel="next" title="Android中的Application类及其用法">
+                <i class="fa fa-chevron-left"></i> Android中的Application类及其用法
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/04/JVM参数配置/" rel="prev" title="JVM参数配置">
+                JVM参数配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/26/google官方training阅读笔记（持续更新）/"
+           data-title="google官方training阅读笔记（持续更新）" data-url="http://fupinyou.com/2016/07/26/google官方training阅读笔记（持续更新）/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="fupinyou" />
+          <p class="site-author-name" itemprop="name">fupinyou</p>
+          <p class="site-description motion-element" itemprop="description">心净则明，心诚则灵</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/分类">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/标签">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/PAULFU" target="_blank">
+                  
+                    <i class="fa fa-https://github.com/PAULFU"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.douban.com/people/94946501" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Douban
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/pinyoufu" target="_blank">
+                  
+                    <i class="fa fa-https://www.zhihu.com/people/pinyoufu"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.v2ex.com/member/0xABCD" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> V2EX
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/9f0ba47c6e24" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Jianshu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://coolshell.cn/" target="_blank">酷壳</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.read.org.cn/" target="_blank">战隼</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.mifengtd.cn/" target="_blank">褪墨</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mindhacks.cn/" target="_blank">刘未鹏</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://ddimples.github.io/" target="_blank">程小黑</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-Started"><span class="nav-number">1.</span> <span class="nav-text">Get Started</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Best-Practices-For-User-Interface"><span class="nav-number">2.</span> <span class="nav-text">Best Practices For User Interface</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fupinyou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+共 <span id="busuanzi_value_site_pv"></span> 次访问,
+您是本站的第<span id="busuanzi_value_site_uv"></span>个小伙伴
+<span id="busuanzi_value_page_pv"></span> 次点击
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fupinyou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

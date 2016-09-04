@@ -1,0 +1,851 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Android中的application类的生命周期和整个应用程序的生命周期一样长，当应用启动时，系统会创建一个进程ID，所有的Activity就会在此进程上运行。同时，系统会自动创建一个application对象并且只会创建一个，也就是属于单例模式的一个类，任何activity中访问时都是同一个对象，所以我们可以用它来保存一些全局变量，而不会产生内存泄露的问题。需要知道的是，通常我们不需要手动创">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android中的Application类及其用法">
+<meta property="og:url" content="http://fupinyou.com/2016/07/26/Android中的Application类及其用法/index.html">
+<meta property="og:site_name" content="加速度猫">
+<meta property="og:description" content="Android中的application类的生命周期和整个应用程序的生命周期一样长，当应用启动时，系统会创建一个进程ID，所有的Activity就会在此进程上运行。同时，系统会自动创建一个application对象并且只会创建一个，也就是属于单例模式的一个类，任何activity中访问时都是同一个对象，所以我们可以用它来保存一些全局变量，而不会产生内存泄露的问题。需要知道的是，通常我们不需要手动创">
+<meta property="og:image" content="https://developer.android.com/reference/android/os/Bundle.html">
+<meta property="og:updated_time" content="2016-07-26T03:57:38.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android中的Application类及其用法">
+<meta name="twitter:description" content="Android中的application类的生命周期和整个应用程序的生命周期一样长，当应用启动时，系统会创建一个进程ID，所有的Activity就会在此进程上运行。同时，系统会自动创建一个application对象并且只会创建一个，也就是属于单例模式的一个类，任何activity中访问时都是同一个对象，所以我们可以用它来保存一些全局变量，而不会产生内存泄露的问题。需要知道的是，通常我们不需要手动创">
+<meta name="twitter:image" content="https://developer.android.com/reference/android/os/Bundle.html">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Android中的Application类及其用法 | 加速度猫 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">加速度猫</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/分类" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/标签" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/关于" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android中的Application类及其用法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-26T09:34:36+08:00" content="2016-07-26">
+              2016-07-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/26/Android中的Application类及其用法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/Android中的Application类及其用法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Android中的application类的生命周期和整个应用程序的生命周期一样长，当应用启动时，系统会创建一个进程ID，所有的Activity就会在此进程上运行。同时，系统会自动创建一个application对象并且只会创建一个，也就是属于单例模式的一个类，任何activity中访问时都是同一个对象，所以我们可以用它来保存一些全局变量，而不会产生内存泄露的问题。需要知道的是，通常我们不需要手动创建一个application，系统会自动帮我们创建。</p>
+<h2 id="创建自定义的Application类"><a href="#创建自定义的Application类" class="headerlink" title="创建自定义的Application类"></a>创建自定义的Application类</h2><p>将自定义的application继承自application类，然后在重载oncreate方法，在里面初始化你想要保存的变量。你还可以写一些get、set方法，用来获取和修改全局变量的值。</p>
+<a id="more"></a>
+<p>构造自定义application类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"MyApplication"</span>;  </div><div class="line"><span class="comment">//自定义的变量  </span></div><div class="line"><span class="keyword">private</span> String str;  </div><div class="line"><span class="keyword">private</span> MyActivityOne mMyActivityOne;  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getStr</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">return</span> str;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStr</span><span class="params">(String str)</span> </span>&#123;  </div><div class="line"><span class="keyword">this</span>.str = str;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> MyActivityOne <span class="title">getActvityOne</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">return</span> mMyActivityOne;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setActvityOne</span><span class="params">(MyActivityOne mMyActivityOne)</span> </span>&#123;  </div><div class="line"><span class="keyword">this</span>.mMyActivityOne = mMyActivityOne;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate();  </div><div class="line">Log.v(TAG, <span class="string">"onCreate"</span>);  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="编写测试程序"><a href="#编写测试程序" class="headerlink" title="编写测试程序"></a>编写测试程序</h2><p>MyActivityOne类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivityOne</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String TAG=<span class="string">"MyActivityOne"</span>;  </div><div class="line"><span class="keyword">private</span> EditText mEditText;  </div><div class="line"><span class="keyword">private</span> Button mButton;  </div><div class="line"><span class="keyword">private</span> TextView mTextView;  </div><div class="line"><span class="keyword">private</span> MyApplication myApplication;  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">setContentView(R.layout.main);  </div><div class="line">myApplication = (MyApplication)getApplication();  </div><div class="line">myApplication.setActvityOne(<span class="keyword">this</span>);  </div><div class="line">mEditText = (EditText)findViewById(R.id.edittext1);  </div><div class="line">mButton = (Button)findViewById(R.id.button1);  </div><div class="line">mTextView = (TextView)findViewById(R.id.textview1);  </div><div class="line">mButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;  </div><div class="line">  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;  </div><div class="line"><span class="comment">//设置MyApplication中的值  </span></div><div class="line">myApplication.setStr(mEditText.getText().toString());  </div><div class="line">Intent intent = <span class="keyword">new</span> Intent(MyActivityOne.<span class="keyword">this</span>, MyActivityTwo.class);   </div><div class="line">startActivity(intent);  </div><div class="line">&#125;  </div><div class="line">&#125;);  </div><div class="line">Log.v(TAG, <span class="string">"onCreate"</span>);  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentText</span><span class="params">(String str)</span></span>&#123;  </div><div class="line">mTextView.setText(str);  </div><div class="line">&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>MyActivityTwo类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivityTwo</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> TextView mTextView;  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">setContentView(R.layout.my_activity_two);  </div><div class="line">tvContent = (TextView)findViewById(R.id.textview1);  </div><div class="line">  </div><div class="line">MyApplication myApplication = (MyApplication)getApplication();  </div><div class="line">mTextView.setText(myApplication.getStr());  </div><div class="line">myApplication.getActvityOne().setContentText(<span class="string">"在MyActivityTwo中设置MyActivityOne的TextView的内容"</span>);  </div><div class="line">  </div><div class="line">&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上代码的逻辑就是在MyActivityOne中设置application中的str的值，然后在MyActivityTwo中获取并且显示，然后调用getApplication()得到系统的application对象，由它设置MyActivityOne中的TextView的内容。</p>
+<p>当然要记得在manifest.xml声明自定义的application：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">manifest</span>  </span></div><div class="line"><span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line"><span class="attr">package</span>=<span class="string">"com.ghli.applicationtest"</span>  </div><div class="line"><span class="attr">android:versionCode</span>=<span class="string">"1"</span>  </div><div class="line"><span class="attr">android:versionName</span>=<span class="string">"1.0"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">application</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">".MyApplication"</span> //写自定义的<span class="attr">application</span></div><div class="line"><span class="attr">android:icon</span>=<span class="string">"@drawable/icon"</span>  </div><div class="line"><span class="attr">android:label</span>=<span class="string">"@string/app_name"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">activity</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">".MyActivityOne"</span>   </div><div class="line"><span class="attr">android:label</span>=<span class="string">"@string/app_name"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">action</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">category</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;  </div><div class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MyActivityTwo"</span>/&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Plus"><a href="#Plus" class="headerlink" title="Plus"></a>Plus</h2><p>常见的在两个activity之间传递数据是通过intent或者bundle来传递的。这里也简单的把它们传递数据的模板贴一下：<br>方法一：1.直接用intent.putExtra(“name”,”zhangsan”)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,OtherActivity.class);</div><div class="line">   intent.putExtra(<span class="string">"name"</span>, <span class="string">"zhnagsan"</span>);</div><div class="line">   intent.putExtra(<span class="string">"age"</span>, <span class="number">25</span>);</div><div class="line">   intent.putExtra(<span class="string">"address"</span>, <span class="string">"shanghai"</span>);</div></pre></td></tr></table></figure>
+<p>方法二：2.用bundle.putString(“name”,”zhangsan”) ;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,OtherActivity.class);</div><div class="line">  Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">  bundle.putString(<span class="string">"name"</span>, <span class="string">"lisi"</span>);</div><div class="line">  bundle.putInt(<span class="string">"age"</span>, <span class="number">28</span>);</div><div class="line">  bundle.putString(<span class="string">"address"</span>, <span class="string">"beijing"</span>);</div><div class="line">  intent.putExtras(bundle);     <span class="comment">//将bundle传入intent中。</span></div></pre></td></tr></table></figure>
+<p>相应的取出方法也有两种：<br>方法一：直接用Intent ,  String nameString = intent.getStringExtra(“name”);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = getIntent();</div><div class="line">String nameString = intent.getStringExtra(<span class="string">"name"</span>);</div><div class="line"><span class="keyword">int</span> age = intent.getIntExtra(<span class="string">"age"</span>,<span class="number">0</span>);</div><div class="line">String addressString = intent.getStringExtra(<span class="string">"address"</span>);</div></pre></td></tr></table></figure>
+<p>方法二：用bundle , String nameString = bundle.getString(“name”);</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = getIntent();</div><div class="line">Bundle bundle = intent.getExtras();</div><div class="line">String nameString = bundle.getString(<span class="string">"name"</span>);</div><div class="line"><span class="keyword">int</span> age = bundle.getInt(<span class="string">"age"</span>);</div><div class="line">String addressString = bundle.getString(<span class="string">"address"</span>);</div></pre></td></tr></table></figure>
+<p>可以将以下4类数据存在bundle中，然后intent.putExtras(bundle)：</p>
+<ul>
+<li>8种基本数据类型及其数组 </li>
+<li>String（String实现了 Serializable ）/CharSequence实例类型的数据及其数组 </li>
+<li>实现了Parcelable的对象及其数组 </li>
+<li>实现了 Serializable 的对象及其数组 </li>
+</ul>
+<p>实现序列化的对象存放在本地文件,实现parcelable的对象存放在内存中。<br>具体的API请参阅<img src="https://developer.android.com/reference/android/os/Bundle.html" alt="bundle API"></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/25/Java进阶系列之对象克隆/" rel="next" title="Java进阶系列之对象克隆">
+                <i class="fa fa-chevron-left"></i> Java进阶系列之对象克隆
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/26/google官方training阅读笔记（持续更新）/" rel="prev" title="google官方training阅读笔记（持续更新）">
+                google官方training阅读笔记（持续更新） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/26/Android中的Application类及其用法/"
+           data-title="Android中的Application类及其用法" data-url="http://fupinyou.com/2016/07/26/Android中的Application类及其用法/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="fupinyou" />
+          <p class="site-author-name" itemprop="name">fupinyou</p>
+          <p class="site-description motion-element" itemprop="description">心净则明，心诚则灵</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/分类">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/标签">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/PAULFU" target="_blank">
+                  
+                    <i class="fa fa-https://github.com/PAULFU"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.douban.com/people/94946501" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Douban
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/pinyoufu" target="_blank">
+                  
+                    <i class="fa fa-https://www.zhihu.com/people/pinyoufu"></i> Zhihu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.v2ex.com/member/0xABCD" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> V2EX
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/9f0ba47c6e24" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Jianshu
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.ruanyifeng.com/blog/" target="_blank">阮一峰</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://coolshell.cn/" target="_blank">酷壳</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.read.org.cn/" target="_blank">战隼</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.mifengtd.cn/" target="_blank">褪墨</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://mindhacks.cn/" target="_blank">刘未鹏</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://ddimples.github.io/" target="_blank">程小黑</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建自定义的Application类"><span class="nav-number">1.</span> <span class="nav-text">创建自定义的Application类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编写测试程序"><span class="nav-number">2.</span> <span class="nav-text">编写测试程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plus"><span class="nav-number">3.</span> <span class="nav-text">Plus</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fupinyou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+共 <span id="busuanzi_value_site_pv"></span> 次访问,
+您是本站的第<span id="busuanzi_value_site_uv"></span>个小伙伴
+<span id="busuanzi_value_page_pv"></span> 次点击
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"fupinyou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
