@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ButterKnife,Android Studio," />
+  <meta name="keywords" content="JIRA," />
 
 
 
@@ -55,19 +55,19 @@
 
 
 
-<meta name="description" content="ButterKnife的作用ButterKnife处理字段和方法，省略大片大片的findViewById，提高编程效率。
-配置在gradle中加入以下语句：1compile &amp;apos;com.jakewharton:butterknife:x.x.x&amp;apos;">
+<meta name="description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
+所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ButterKnife在Android Studio中如何使用">
-<meta property="og:url" content="http://fupinyou.com/2016/02/21/ButterKnife在Android-Studio中如何使用/index.html">
+<meta property="og:title" content="JIRA连接MySQL数据库的坑">
+<meta property="og:url" content="http://fupinyou.com/2016/10/10/JIRA连接MySQL数据库的坑/index.html">
 <meta property="og:site_name" content="加速度猫">
-<meta property="og:description" content="ButterKnife的作用ButterKnife处理字段和方法，省略大片大片的findViewById，提高编程效率。
-配置在gradle中加入以下语句：1compile &amp;apos;com.jakewharton:butterknife:x.x.x&amp;apos;">
-<meta property="og:updated_time" content="2016-02-29T14:43:00.677Z">
+<meta property="og:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
+所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
+<meta property="og:updated_time" content="2016-10-10T14:51:26.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ButterKnife在Android Studio中如何使用">
-<meta name="twitter:description" content="ButterKnife的作用ButterKnife处理字段和方法，省略大片大片的findViewById，提高编程效率。
-配置在gradle中加入以下语句：1compile &amp;apos;com.jakewharton:butterknife:x.x.x&amp;apos;">
+<meta name="twitter:title" content="JIRA连接MySQL数据库的坑">
+<meta name="twitter:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
+所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
 
 
 
@@ -85,7 +85,7 @@
   };
 </script>
 
-  <title> ButterKnife在Android Studio中如何使用 | 加速度猫 </title>
+  <title> JIRA连接MySQL数据库的坑 | 加速度猫 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +235,7 @@
             
             
               
-                ButterKnife在Android Studio中如何使用
+                JIRA连接MySQL数据库的坑
               
             
           </h1>
@@ -247,8 +247,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-21T15:35:47+08:00" content="2016-02-21">
-              2016-02-21
+            <time itemprop="dateCreated" datetime="2016-10-10T21:38:16+08:00" content="2016-10-10">
+              2016-10-10
             </time>
           </span>
 
@@ -277,8 +277,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/21/ButterKnife在Android-Studio中如何使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/21/ButterKnife在Android-Studio中如何使用/" itemprop="commentsCount"></span>
+                <a href="/2016/10/10/JIRA连接MySQL数据库的坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/10/JIRA连接MySQL数据库的坑/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,11 +299,10 @@
       
 
       
-        <h1 id="ButterKnife的作用"><a href="#ButterKnife的作用" class="headerlink" title="ButterKnife的作用"></a>ButterKnife的作用</h1><p>ButterKnife处理字段和方法，省略大片大片的findViewById，提高编程效率。</p>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>在gradle中加入以下语句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile &apos;com.jakewharton:butterknife:x.x.x&apos;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>注意是加在Module: app的gradle文件中,加上之后不用运行什么命令,直接Sync Now一下。x.x.x表示版本号，最新的版本已经是7.0.1了，项目地址→<a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">jakewharton大神的github</a>，官方文档→<a href="http://jakewharton.github.io/butterknife/" target="_blank" rel="external">在这里</a>。注解已经不叫@InjectView了，而叫@Bind。同时注册的方式也从<code>ButterKnife.inject(this);</code>变成<code>ButterKnife.bind(this);</code>，其实现在就可以手动使用ButterKnife的语法了，但是程序员应该要学会偷懒，在Android Studio中有一个插件叫做<code>Android Butterknife Zelezny</code>，打开Android Studio的Settings，选择Plugins，然后在搜索栏里搜索Android ButterKnife Zelezny，下载安装之后，重启Android Studio就可以了。</p>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>在你的Activity中有<code>R.layout.xxx</code>字样上点鼠标右键，选择<code>Generate...</code>菜单项，再选择<code>Generate ButterKnife Injections</code>,AS将会弹出一个对话框，你根据自己的需要选择它给你列出来的那些多选框，点击<code>confirm</code>。是不是很炫？<br>为啥这个插件名字叫Zelezny呢？其实这个是一个捷克名人的名字，他是一名标枪运动员和奥运金牌的获得者，也是标枪项目世界纪录保持者。</p>
+        <p>JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。</p>
+<p>所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown system variable ‘storage_engine’。这是由于在MySQL 5.7.5 版本中去除了这个变量，用default_storage_engine代替，请见===》<a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_default_storage_engine" target="_blank" rel="external">MySQL Server System Variables</a>。<br><a id="more"></a></p>
+<p>而截至目前，JIRA的最新版本7.2.2是去找storage_engine变量，当然会出错了！所以我们要做的就是修改代码重新编译。需要修改的类的路径为：mysql-connector-j/src/com/mysql/jdbc/ConnectionImpl.java，找到里面的protected static Connection getInstance方法，修改为以下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> Connection <span class="title">getInstance</span><span class="params">(String hostToConnectTo, <span class="keyword">int</span> portToConnectTo, Properties info, String databaseToConnectTo, String url)</span></span></div><div class="line">            <span class="keyword">throws</span> SQLException &#123;</div><div class="line"></div><div class="line">            <span class="comment">// hard fix for MySQL 5.7 deprecation of 'storage_engine' variable</span></div><div class="line">            info.setProperty(<span class="string">"sessionVariables"</span>, info.getProperty(<span class="string">"sessionVariables"</span>).replace(<span class="string">"storage_engine"</span>, <span class="string">"default_storage_engine"</span>));</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!Util.isJdbc4()) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConnectionImpl(hostToConnectTo, portToConnectTo, info, databaseToConnectTo, url);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> (Connection) Util.handleNewInstance(JDBC_4_CONNECTION_CTOR,</div><div class="line">                <span class="keyword">new</span> Object[] &#123; hostToConnectTo, Integer.valueOf(portToConnectTo), info, databaseToConnectTo, url &#125;, <span class="keyword">null</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>这里我已经编译好了一份，使用的JDK版本是1.6，亲测有效，<a href="https://pan.baidu.com/s/1dFeFhzb" target="_blank" rel="external">下载链接</a>，密码：f2n6。将下载到的jar包拷贝到jira安装目录下的lib目录里，至此JIRA就能成功的连上MySQL数据库了，具体连接操作参见这篇<a href="http://www.cnblogs.com/yangxia-test/p/4448002.html" target="_blank" rel="external">博客</a>,但是里面提供的破解方法对最新版本的JIRA 7.2.2 已经失效，而且就算你跟博主使用相同版本的JIRA，破解时倒是能成功，汉化也能成功，但是汉化后你会发现你的JIRA少了一些功能，比如没有插件这个版块了，所以建议不要汉化，我都是安装了几遍之后才发现的。</p>
 
       
     </div>
@@ -312,9 +311,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ButterKnife/" rel="tag">#ButterKnife</a>
-          
-            <a href="/tags/Android-Studio/" rel="tag">#Android Studio</a>
+            <a href="/tags/JIRA/" rel="tag">#JIRA</a>
           
         </div>
       
@@ -323,17 +320,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/20/Markdown语法详解/" rel="next" title="Markdown语法详解">
-                <i class="fa fa-chevron-left"></i> Markdown语法详解
+              <a href="/2016/09/26/使用VNC连接远程Linux桌面/" rel="next" title="使用VNC连接远程Linux桌面">
+                <i class="fa fa-chevron-left"></i> 使用VNC连接远程Linux桌面
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/22/RecyclerView使用详解/" rel="prev" title="RecyclerView用法介绍">
-                RecyclerView用法介绍 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -362,8 +355,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/21/ButterKnife在Android-Studio中如何使用/"
-           data-title="ButterKnife在Android Studio中如何使用" data-url="http://fupinyou.com/2016/02/21/ButterKnife在Android-Studio中如何使用/">
+      <div class="ds-thread" data-thread-key="2016/10/10/JIRA连接MySQL数据库的坑/"
+           data-title="JIRA连接MySQL数据库的坑" data-url="http://fupinyou.com/2016/10/10/JIRA连接MySQL数据库的坑/">
       </div>
     
   </div>
@@ -521,7 +514,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ButterKnife的作用"><span class="nav-number">1.</span> <span class="nav-text">ButterKnife的作用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
