@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="http://fupinyou.com">
   <title>JIRA连接MySQL数据库的坑 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
-所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
+  <meta name="description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。 所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
+<meta name="keywords" content="JIRA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JIRA连接MySQL数据库的坑">
 <meta property="og:url" content="http://fupinyou.com/2016/10/10/JIRA连接MySQL数据库的坑/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
-所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
+<meta property="og:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。 所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
 <meta property="og:updated_time" content="2016-10-10T14:51:26.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JIRA连接MySQL数据库的坑">
-<meta name="twitter:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。
-所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
+<meta name="twitter:description" content="JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。 所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown">
   
     <link rel="alternative" href="/atom.xml" title="Neulana" type="application/atom+xml">
   
@@ -54,6 +52,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
 		
 
 		<nav class="header-menu">
@@ -95,9 +95,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -120,6 +134,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -144,9 +160,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -202,7 +232,21 @@
       
         <p>JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。</p>
 <p>所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown system variable ‘storage_engine’。这是由于在MySQL 5.7.5 版本中去除了这个变量，用default_storage_engine代替，请见===》<a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_default_storage_engine" target="_blank" rel="external">MySQL Server System Variables</a>。<br><a id="more"></a></p>
-<p>而截至目前，JIRA的最新版本7.2.2是去找storage_engine变量，当然会出错了！所以我们要做的就是修改代码重新编译。需要修改的类的路径为：mysql-connector-j/src/com/mysql/jdbc/ConnectionImpl.java，找到里面的protected static Connection getInstance方法，修改为以下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">static</span> Connection <span class="title">getInstance</span><span class="params">(String hostToConnectTo, <span class="keyword">int</span> portToConnectTo, Properties info, String databaseToConnectTo, String url)</span></span></div><div class="line">            <span class="keyword">throws</span> SQLException &#123;</div><div class="line"></div><div class="line">            <span class="comment">// hard fix for MySQL 5.7 deprecation of 'storage_engine' variable</span></div><div class="line">            info.setProperty(<span class="string">"sessionVariables"</span>, info.getProperty(<span class="string">"sessionVariables"</span>).replace(<span class="string">"storage_engine"</span>, <span class="string">"default_storage_engine"</span>));</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!Util.isJdbc4()) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ConnectionImpl(hostToConnectTo, portToConnectTo, info, databaseToConnectTo, url);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> (Connection) Util.handleNewInstance(JDBC_4_CONNECTION_CTOR,</div><div class="line">                <span class="keyword">new</span> Object[] &#123; hostToConnectTo, Integer.valueOf(portToConnectTo), info, databaseToConnectTo, url &#125;, <span class="keyword">null</span>);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>而截至目前，JIRA的最新版本7.2.2是去找storage_engine变量，当然会出错了！所以我们要做的就是修改代码重新编译。需要修改的类的路径为：mysql-connector-j/src/com/mysql/jdbc/ConnectionImpl.java，找到里面的protected static Connection getInstance方法，修改为以下代码：</p>
+<pre><code class="java">protected static Connection getInstance(String hostToConnectTo, int portToConnectTo, Properties info, String databaseToConnectTo, String url)
+            throws SQLException {
+
+            // hard fix for MySQL 5.7 deprecation of &#39;storage_engine&#39; variable
+            info.setProperty(&quot;sessionVariables&quot;, info.getProperty(&quot;sessionVariables&quot;).replace(&quot;storage_engine&quot;, &quot;default_storage_engine&quot;));
+
+        if (!Util.isJdbc4()) {
+            return new ConnectionImpl(hostToConnectTo, portToConnectTo, info, databaseToConnectTo, url);
+        }
+
+        return (Connection) Util.handleNewInstance(JDBC_4_CONNECTION_CTOR,
+                new Object[] { hostToConnectTo, Integer.valueOf(portToConnectTo), info, databaseToConnectTo, url }, null);
+    }
+</code></pre>
 <p>这里我已经编译好了一份，使用的JDK版本是1.6，亲测有效，<a href="https://pan.baidu.com/s/1dFeFhzb" target="_blank" rel="external">下载链接</a>，密码：f2n6。将下载到的jar包拷贝到jira安装目录下的lib目录里，至此JIRA就能成功的连上MySQL数据库了，具体连接操作参见这篇<a href="http://www.cnblogs.com/yangxia-test/p/4448002.html" target="_blank" rel="external">博客</a>,但是里面提供的破解方法对最新版本的JIRA 7.2.2 已经失效，而且就算你跟博主使用相同版本的JIRA，破解时倒是能成功，汉化也能成功，但是汉化后你会发现你的JIRA少了一些功能，比如没有插件这个版块了，所以建议不要汉化，我都是安装了几遍之后才发现的。</p>
 
       
@@ -220,6 +264,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -343,6 +397,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/10/10/JIRA连接MySQL数据库的坑/", 
+    sourceId: "JIRA连接MySQL数据库的坑",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -376,7 +441,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -454,11 +519,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,11 +543,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +559,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,23 +583,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -575,14 +640,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

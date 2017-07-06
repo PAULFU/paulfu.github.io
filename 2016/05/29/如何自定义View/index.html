@@ -8,19 +8,17 @@
   <link rel="dns-prefetch" href="http://fupinyou.com">
   <title>如何自定义View(一) | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。
-三个方法的各自">
+  <meta name="description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。 三个方法的各自">
+<meta name="keywords" content="Android,自定义View">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何自定义View(一)">
 <meta property="og:url" content="http://fupinyou.com/2016/05/29/如何自定义View/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。
-三个方法的各自">
+<meta property="og:description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。 三个方法的各自">
 <meta property="og:updated_time" content="2016-07-25T15:18:08.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何自定义View(一)">
-<meta name="twitter:description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。
-三个方法的各自">
+<meta name="twitter:description" content="概念View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。 三个方法的各自">
   
     <link rel="alternative" href="/atom.xml" title="Neulana" type="application/atom+xml">
   
@@ -54,6 +52,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
 		
 
 		<nav class="header-menu">
@@ -95,9 +95,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -120,6 +134,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -144,9 +160,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -201,36 +231,212 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>View 为我们提供了 onMeasure()  onLayout()  onDraw() 这样的方法，其实所谓的自定义View，也就是对onMeasure() onLayout() onDraw() 三个方法的重写的过程。<br> 所谓的自定义View 实际上，就是仿照View的工作流程，去自己实现的过程。根据继承对象的不同自定义View又分为继承View 与ViewGroup两种。</p>
-<h2 id="三个方法的各自作用"><a href="#三个方法的各自作用" class="headerlink" title="三个方法的各自作用"></a>三个方法的各自作用</h2><h3 id="onMeasure"><a href="#onMeasure" class="headerlink" title="onMeasure()"></a>onMeasure()</h3><p>测量View和子View的大小<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onMeasure</span><span class="params">(<span class="keyword">int</span> widthMeasureSpec, <span class="keyword">int</span> heightMeasureSpec)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onMeasure(widthMeasureSpec, heightMeasureSpec);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> widthMode = MeasureSpec.getMode(widthMeasureSpec);</div><div class="line">    <span class="keyword">int</span> widthSize = MeasureSpec.getSize(widthMeasureSpec);</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (widthMode == MeasureSpec.AT_MOST) &#123;</div><div class="line">        mWidth = Math.min(widthSize, (<span class="keyword">int</span>) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, <span class="number">160</span>, getResources().getDisplayMetrics()));</div><div class="line">        setMeasuredDimension(mWidth, mWidth);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="三个方法的各自作用"><a href="#三个方法的各自作用" class="headerlink" title="三个方法的各自作用"></a>三个方法的各自作用</h2><h3 id="onMeasure"><a href="#onMeasure" class="headerlink" title="onMeasure()"></a>onMeasure()</h3><p>测量View和子View的大小<br><a id="more"></a></p>
+<pre><code class="java">@Override
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+    int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+    int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+
+    if (widthMode == MeasureSpec.AT_MOST) {
+        mWidth = Math.min(widthSize, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, 160, getResources().getDisplayMetrics()));
+        setMeasuredDimension(mWidth, mWidth);
+    }
+}
+</code></pre>
 <p>内部调用了setMeasuredDimension() 方法，这个方法看名字就知道是设置测量的View的宽/高，传递的参数就是宽度和高度。<br>  onMeasure通过父View传递过来的大小和模式，以及自身的背景图片的大小得出自身最终的大小，通过setMeasuredDimension()方法设置给mMeasuredWidth和mMeasuredHeight。这里用到两个很重要的方法MeasureSpec.getModeMeasureSpec和MeasureSpec.getSize，实际操作 中就是根据他俩来识别在XML中设置的布局参数来设置自定义View的宽度和高度。MeasureSpec的三种模式——MeasureSpec.AT_MOST对应wrap_content，MeasureSpec.EXACTLY对应xxx dip(固定值)，MeasureSpec.UNSPECIFIED对应match_parent。</p>
 <h3 id="onLayout"><a href="#onLayout" class="headerlink" title="onLayout()"></a>onLayout()</h3><p>是ViewGroup确定它的子View的位置的。</p>
-<h3 id="onDraw"><a href="#onDraw" class="headerlink" title="onDraw()"></a>onDraw()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDraw</span><span class="params">(Canvas canvas)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDraw(canvas);</div><div class="line">    ···</div></pre></td></tr></table></figure>
+<h3 id="onDraw"><a href="#onDraw" class="headerlink" title="onDraw()"></a>onDraw()</h3><pre><code class="java">@Override
+protected void onDraw(Canvas canvas) {
+    super.onDraw(canvas);
+    ···
+</code></pre>
 <p>这里就是用画笔画想要的图的。</p>
-<h3 id="设置自定义属性"><a href="#设置自定义属性" class="headerlink" title="设置自定义属性"></a>设置自定义属性</h3><p>在Android工程目录下的attrs.xml下创建自定义View的属性，格式如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"Navbar"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"textTitle"</span> <span class="attr">format</span>=<span class="string">"string|reference"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"onAction"</span> <span class="attr">format</span>=<span class="string">"string"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="设置自定义属性"><a href="#设置自定义属性" class="headerlink" title="设置自定义属性"></a>设置自定义属性</h3><p>在Android工程目录下的attrs.xml下创建自定义View的属性，格式如下：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+
+    &lt;declare-styleable name=&quot;Navbar&quot;&gt;
+        &lt;attr name=&quot;textTitle&quot; format=&quot;string|reference&quot; /&gt;
+        &lt;attr name=&quot;onAction&quot; format=&quot;string&quot; /&gt;
+    &lt;/declare-styleable&gt;
+
+&lt;/resources&gt;
+</code></pre>
 <h4 id="自定义属性的格式"><a href="#自定义属性的格式" class="headerlink" title="自定义属性的格式"></a>自定义属性的格式</h4><p>上面我们看到有format关键字，它就是在使用自定义View时指定的参数的类型。</p>
-<h5 id="reference：参考某一资源ID"><a href="#reference：参考某一资源ID" class="headerlink" title="reference：参考某一资源ID"></a>reference：参考某一资源ID</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"background"</span> <span class="attr">format</span>=<span class="string">"reference"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h5 id="reference：参考某一资源ID"><a href="#reference：参考某一资源ID" class="headerlink" title="reference：参考某一资源ID"></a>reference：参考某一资源ID</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;background&quot; format=&quot;reference&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
 <p>属性使用</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@drawable/图片ID"</span> /&gt;</div></pre></td></tr></table></figure>
-<h5 id="color：颜色值"><a href="#color：颜色值" class="headerlink" title="color：颜色值"></a>color：颜色值</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"textColor"</span> <span class="attr">format</span>=<span class="string">"color"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:textColor</span>=<span class="string">"#00FF00"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="boolean：布尔值"><a href="#boolean：布尔值" class="headerlink" title="boolean：布尔值"></a>boolean：布尔值</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"focusable"</span> <span class="attr">format</span>=<span class="string">"boolean"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:focusable</span>=<span class="string">"true"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="dimension：尺寸值"><a href="#dimension：尺寸值" class="headerlink" title="dimension：尺寸值"></a>dimension：尺寸值</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"layout_width"</span> <span class="attr">format</span>=<span class="string">"dimension"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Button</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"42dip"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="float：浮点值"><a href="#float：浮点值" class="headerlink" title="float：浮点值"></a>float：浮点值</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"AlphaAnimation"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"fromAlpha"</span> <span class="attr">format</span>=<span class="string">"float"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"toAlpha"</span> <span class="attr">format</span>=<span class="string">"float"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">alpha</span></span></div><div class="line">    <span class="attr">android:fromAlpha</span>=<span class="string">"1.0"</span></div><div class="line">    <span class="attr">android:toAlpha</span>=<span class="string">"0.7"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h4 id="integer：整型值"><a href="#integer：整型值" class="headerlink" title="integer：整型值"></a>integer：整型值</h4><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"AnimatedRotateDrawable"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"visible"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"frameDuration"</span> <span class="attr">format</span>=<span class="string">"integer"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"framesCount"</span> <span class="attr">format</span>=<span class="string">"integer"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"pivotX"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"pivotY"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"drawable"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">animated-rotate</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:drawable</span>=<span class="string">"@drawable/图片ID"</span></div><div class="line">    <span class="attr">android:frameDuration</span>=<span class="string">"100"</span></div><div class="line">    <span class="attr">android:framesCount</span>=<span class="string">"12"</span></div><div class="line">    <span class="attr">android:pivotX</span>=<span class="string">"50%"</span></div><div class="line">    <span class="attr">android:pivotY</span>=<span class="string">"50%"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="string：字符串"><a href="#string：字符串" class="headerlink" title="string：字符串"></a>string：字符串</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"MapView"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"apiKey"</span> <span class="attr">format</span>=<span class="string">"string"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">com.google.android.maps.MapView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:apiKey</span>=<span class="string">"0jOkQ80oD1JL9C6HAja99uGXCRiS2CGjKO_bc_g"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="fraction：百分数"><a href="#fraction：百分数" class="headerlink" title="fraction：百分数"></a>fraction：百分数</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"RotateDrawable"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"visible"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"fromDegrees"</span> <span class="attr">format</span>=<span class="string">"float"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"toDegrees"</span> <span class="attr">format</span>=<span class="string">"float"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"pivotX"</span> <span class="attr">format</span>=<span class="string">"fraction"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"pivotY"</span> <span class="attr">format</span>=<span class="string">"fraction"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"drawable"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">rotate</span></span></div><div class="line">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></div><div class="line">    <span class="attr">android:duration</span>=<span class="string">"5000"</span></div><div class="line">    <span class="attr">android:fromDegrees</span>=<span class="string">"0"</span></div><div class="line">    <span class="attr">android:interpolator</span>=<span class="string">"@anim/动画ID"</span></div><div class="line">    <span class="attr">android:pivotX</span>=<span class="string">"200%"</span></div><div class="line">    <span class="attr">android:pivotY</span>=<span class="string">"300%"</span></div><div class="line">    <span class="attr">android:repeatCount</span>=<span class="string">"infinite"</span></div><div class="line">    <span class="attr">android:repeatMode</span>=<span class="string">"restart"</span></div><div class="line">    <span class="attr">android:toDegrees</span>=<span class="string">"360"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="enum：枚举值"><a href="#enum：枚举值" class="headerlink" title="enum：枚举值"></a>enum：枚举值</h5><p>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"orientation"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">"horizontal"</span> <span class="attr">value</span>=<span class="string">"0"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">enum</span> <span class="attr">name</span>=<span class="string">"vertical"</span> <span class="attr">value</span>=<span class="string">"1"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">attr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h5 id="多个类型并用"><a href="#多个类型并用" class="headerlink" title="多个类型并用"></a>多个类型并用</h5><p>有时类型不是唯一的，我们可以使用“或”来定义多种类型<br>属性定义<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"名称"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"background"</span> <span class="attr">format</span>=<span class="string">"reference|color"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>属性使用<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ImageView</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"42dip"</span></div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@drawable/图片ID|#00FF00"</span> /&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="使用自定义View"><a href="#使用自定义View" class="headerlink" title="使用自定义View"></a>使用自定义View</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">xmlns:app</span>=<span class="string">"http://schemas.android.com/apk/res/res-auto"</span> //设置命名空间，引用前缀</div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@drawable/main_bg"</span></div><div class="line">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span> &gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">com.boohee.myview.Navbar</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/navbar"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">app:textTitle</span>=<span class="string">"@string/tab_more_text"</span> /&gt;    //注意它的前缀与其他标签不一样</div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="在Activity中获取"><a href="#在Activity中获取" class="headerlink" title="在Activity中获取"></a>在Activity中获取</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">ColorPregressBar</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, <span class="keyword">null</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ColorPregressBar</span><span class="params">(Context context, AttributeSet attrs)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>(context, attrs, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ColorPregressBar</span><span class="params">(Context context, AttributeSet attrs, <span class="keyword">int</span> defStyleAttr)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</div><div class="line"></div><div class="line">        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ColorProgressBar);</div><div class="line">        mFirstColor = ta.getColor(R.styleable.ColorProgressBar_firstColor, Color.RED);</div><div class="line">        mSecondColor = ta.getColor(R.styleable.ColorProgressBar_secondColor, Color.BLUE);</div><div class="line">        mCircleWidth = ta.getDimensionPixelSize(R.styleable.ColorProgressBar_circleWidth, (<span class="keyword">int</span>) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, <span class="number">6</span>, getResources().getDisplayMetrics()));</div><div class="line">        ta.recycle();</div><div class="line"></div><div class="line">        mPaint = <span class="keyword">new</span> Paint(Paint.ANTI_ALIAS_FLAG);</div><div class="line">        mPaint.setStyle(Paint.Style.STROKE);</div><div class="line">        mPaint.setStrokeWidth(mCircleWidth);</div><div class="line"></div><div class="line">        mChanged = <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    ...<span class="comment">//省略了其他方法</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;ImageView
+    android:layout_width=&quot;42dip&quot;
+    android:layout_height=&quot;42dip&quot;
+    android:background=&quot;@drawable/图片ID&quot; /&gt;
+</code></pre>
+<h5 id="color：颜色值"><a href="#color：颜色值" class="headerlink" title="color：颜色值"></a>color：颜色值</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;textColor&quot; format=&quot;color&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;TextView
+    android:layout_width=&quot;42dip&quot;
+    android:layout_height=&quot;42dip&quot;
+    android:textColor=&quot;#00FF00&quot; /&gt;
+</code></pre>
+<h5 id="boolean：布尔值"><a href="#boolean：布尔值" class="headerlink" title="boolean：布尔值"></a>boolean：布尔值</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;focusable&quot; format=&quot;boolean&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;Button
+    android:layout_width=&quot;42dip&quot;
+    android:layout_height=&quot;42dip&quot;
+    android:focusable=&quot;true&quot; /&gt;
+</code></pre>
+<h5 id="dimension：尺寸值"><a href="#dimension：尺寸值" class="headerlink" title="dimension：尺寸值"></a>dimension：尺寸值</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;layout_width&quot; format=&quot;dimension&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;Button
+    android:layout_width=&quot;42dip&quot;
+    android:layout_height=&quot;42dip&quot; /&gt;
+</code></pre>
+<h5 id="float：浮点值"><a href="#float：浮点值" class="headerlink" title="float：浮点值"></a>float：浮点值</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;AlphaAnimation&quot;&gt;
+    &lt;attr name=&quot;fromAlpha&quot; format=&quot;float&quot; /&gt;
+    &lt;attr name=&quot;toAlpha&quot; format=&quot;float&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;alpha
+    android:fromAlpha=&quot;1.0&quot;
+    android:toAlpha=&quot;0.7&quot; /&gt;
+</code></pre>
+<h4 id="integer：整型值"><a href="#integer：整型值" class="headerlink" title="integer：整型值"></a>integer：整型值</h4><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;AnimatedRotateDrawable&quot;&gt;
+    &lt;attr name=&quot;visible&quot; /&gt;
+    &lt;attr name=&quot;frameDuration&quot; format=&quot;integer&quot; /&gt;
+    &lt;attr name=&quot;framesCount&quot; format=&quot;integer&quot; /&gt;
+    &lt;attr name=&quot;pivotX&quot; /&gt;
+    &lt;attr name=&quot;pivotY&quot; /&gt;
+    &lt;attr name=&quot;drawable&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;animated-rotate
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:drawable=&quot;@drawable/图片ID&quot;
+    android:frameDuration=&quot;100&quot;
+    android:framesCount=&quot;12&quot;
+    android:pivotX=&quot;50%&quot;
+    android:pivotY=&quot;50%&quot; /&gt;
+</code></pre>
+<h5 id="string：字符串"><a href="#string：字符串" class="headerlink" title="string：字符串"></a>string：字符串</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;MapView&quot;&gt;
+    &lt;attr name=&quot;apiKey&quot; format=&quot;string&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;com.google.android.maps.MapView
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:apiKey=&quot;0jOkQ80oD1JL9C6HAja99uGXCRiS2CGjKO_bc_g&quot; /&gt;
+</code></pre>
+<h5 id="fraction：百分数"><a href="#fraction：百分数" class="headerlink" title="fraction：百分数"></a>fraction：百分数</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;RotateDrawable&quot;&gt;
+    &lt;attr name=&quot;visible&quot; /&gt;
+    &lt;attr name=&quot;fromDegrees&quot; format=&quot;float&quot; /&gt;
+    &lt;attr name=&quot;toDegrees&quot; format=&quot;float&quot; /&gt;
+    &lt;attr name=&quot;pivotX&quot; format=&quot;fraction&quot; /&gt;
+    &lt;attr name=&quot;pivotY&quot; format=&quot;fraction&quot; /&gt;
+    &lt;attr name=&quot;drawable&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;rotate
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:duration=&quot;5000&quot;
+    android:fromDegrees=&quot;0&quot;
+    android:interpolator=&quot;@anim/动画ID&quot;
+    android:pivotX=&quot;200%&quot;
+    android:pivotY=&quot;300%&quot;
+    android:repeatCount=&quot;infinite&quot;
+    android:repeatMode=&quot;restart&quot;
+    android:toDegrees=&quot;360&quot; /&gt;
+</code></pre>
+<h5 id="enum：枚举值"><a href="#enum：枚举值" class="headerlink" title="enum：枚举值"></a>enum：枚举值</h5><p>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;orientation&quot;&gt;
+        &lt;enum name=&quot;horizontal&quot; value=&quot;0&quot; /&gt;
+        &lt;enum name=&quot;vertical&quot; value=&quot;1&quot; /&gt;
+    &lt;/attr&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;LinearLayout
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:orientation=&quot;vertical&quot; /&gt;
+</code></pre>
+<h5 id="多个类型并用"><a href="#多个类型并用" class="headerlink" title="多个类型并用"></a>多个类型并用</h5><p>有时类型不是唯一的，我们可以使用“或”来定义多种类型<br>属性定义</p>
+<pre><code class="xml">&lt;declare-styleable name=&quot;名称&quot;&gt;
+    &lt;attr name=&quot;background&quot; format=&quot;reference|color&quot; /&gt;
+&lt;/declare-styleable&gt;
+</code></pre>
+<p>属性使用</p>
+<pre><code class="xml">&lt;ImageView
+    android:layout_width=&quot;42dip&quot;
+    android:layout_height=&quot;42dip&quot;
+    android:background=&quot;@drawable/图片ID|#00FF00&quot; /&gt;
+</code></pre>
+<h3 id="使用自定义View"><a href="#使用自定义View" class="headerlink" title="使用自定义View"></a>使用自定义View</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res/res-auto&quot; //设置命名空间，引用前缀
+    android:layout_width=&quot;fill_parent&quot;
+    android:layout_height=&quot;fill_parent&quot;
+    android:background=&quot;@drawable/main_bg&quot;
+    android:orientation=&quot;vertical&quot; &gt;
+
+    &lt;com.boohee.myview.Navbar
+        android:id=&quot;@+id/navbar&quot;
+        android:layout_width=&quot;fill_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        app:textTitle=&quot;@string/tab_more_text&quot; /&gt;    //注意它的前缀与其他标签不一样
+&lt;/LinearLayout&gt;
+</code></pre>
+<h3 id="在Activity中获取"><a href="#在Activity中获取" class="headerlink" title="在Activity中获取"></a>在Activity中获取</h3><pre><code class="java">public ColorPregressBar(Context context) {
+        this(context, null);
+    }
+
+    public ColorPregressBar(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public ColorPregressBar(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ColorProgressBar);
+        mFirstColor = ta.getColor(R.styleable.ColorProgressBar_firstColor, Color.RED);
+        mSecondColor = ta.getColor(R.styleable.ColorProgressBar_secondColor, Color.BLUE);
+        mCircleWidth = ta.getDimensionPixelSize(R.styleable.ColorProgressBar_circleWidth, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 6, getResources().getDisplayMetrics()));
+        ta.recycle();
+
+        mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(mCircleWidth);
+
+        mChanged = false;
+    }
+    ...//省略了其他方法
+}
+</code></pre>
 <p>其中的obtainStyledAttributes()就是获取使用布局时设置给各种子标签的参数。getColor()和getDimensionPixelSize()是获取某一个特定的属性值，它的第二个参数是当使用View时没有显式指定参数值时，用这个默认值。</p>
 
       
@@ -248,6 +454,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -371,6 +587,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/05/29/如何自定义View/", 
+    sourceId: "如何自定义View",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -404,7 +631,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -482,11 +709,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +733,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +749,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,23 +773,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -603,14 +830,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

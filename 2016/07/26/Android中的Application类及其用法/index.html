@@ -9,6 +9,7 @@
   <title>Android中的Application类及其用法 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Android中的application类的生命周期和整个应用程序的生命周期一样长，当应用启动时，系统会创建一个进程ID，所有的Activity就会在此进程上运行。同时，系统会自动创建一个application对象并且只会创建一个，也就是属于单例模式的一个类，任何activity中访问时都是同一个对象，所以我们可以用它来保存一些全局变量，而不会产生内存泄露的问题。需要知道的是，通常我们不需要手动创">
+<meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android中的Application类及其用法">
 <meta property="og:url" content="http://fupinyou.com/2016/07/26/Android中的Application类及其用法/index.html">
@@ -54,6 +55,8 @@
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -94,9 +97,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,6 +136,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -143,9 +162,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -203,22 +236,141 @@
 <h2 id="创建自定义的Application类"><a href="#创建自定义的Application类" class="headerlink" title="创建自定义的Application类"></a>创建自定义的Application类</h2><p>将自定义的application继承自application类，然后在重载oncreate方法，在里面初始化你想要保存的变量。你还可以写一些get、set方法，用来获取和修改全局变量的值。</p>
 <a id="more"></a>
 <p>构造自定义application类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String TAG = <span class="string">"MyApplication"</span>;  </div><div class="line"><span class="comment">//自定义的变量  </span></div><div class="line"><span class="keyword">private</span> String str;  </div><div class="line"><span class="keyword">private</span> MyActivityOne mMyActivityOne;  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getStr</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">return</span> str;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setStr</span><span class="params">(String str)</span> </span>&#123;  </div><div class="line"><span class="keyword">this</span>.str = str;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> MyActivityOne <span class="title">getActvityOne</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">return</span> mMyActivityOne;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setActvityOne</span><span class="params">(MyActivityOne mMyActivityOne)</span> </span>&#123;  </div><div class="line"><span class="keyword">this</span>.mMyActivityOne = mMyActivityOne;  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate();  </div><div class="line">Log.v(TAG, <span class="string">"onCreate"</span>);  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class MyApplication extends Application {  
+private static final String TAG = &quot;MyApplication&quot;;  
+//自定义的变量  
+private String str;  
+private MyActivityOne mMyActivityOne;  
+
+
+public String getStr() {  
+return str;  
+}  
+
+public void setStr(String str) {  
+this.str = str;  
+}  
+
+public MyActivityOne getActvityOne() {  
+return mMyActivityOne;  
+}  
+
+public void setActvityOne(MyActivityOne mMyActivityOne) {  
+this.mMyActivityOne = mMyActivityOne;  
+}  
+
+
+@Override  
+public void onCreate() {  
+super.onCreate();  
+Log.v(TAG, &quot;onCreate&quot;);  
+}  
+
+}
+</code></pre>
 <h2 id="编写测试程序"><a href="#编写测试程序" class="headerlink" title="编写测试程序"></a>编写测试程序</h2><p>MyActivityOne类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivityOne</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String TAG=<span class="string">"MyActivityOne"</span>;  </div><div class="line"><span class="keyword">private</span> EditText mEditText;  </div><div class="line"><span class="keyword">private</span> Button mButton;  </div><div class="line"><span class="keyword">private</span> TextView mTextView;  </div><div class="line"><span class="keyword">private</span> MyApplication myApplication;  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">setContentView(R.layout.main);  </div><div class="line">myApplication = (MyApplication)getApplication();  </div><div class="line">myApplication.setActvityOne(<span class="keyword">this</span>);  </div><div class="line">mEditText = (EditText)findViewById(R.id.edittext1);  </div><div class="line">mButton = (Button)findViewById(R.id.button1);  </div><div class="line">mTextView = (TextView)findViewById(R.id.textview1);  </div><div class="line">mButton.setOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;  </div><div class="line">  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;  </div><div class="line"><span class="comment">//设置MyApplication中的值  </span></div><div class="line">myApplication.setStr(mEditText.getText().toString());  </div><div class="line">Intent intent = <span class="keyword">new</span> Intent(MyActivityOne.<span class="keyword">this</span>, MyActivityTwo.class);   </div><div class="line">startActivity(intent);  </div><div class="line">&#125;  </div><div class="line">&#125;);  </div><div class="line">Log.v(TAG, <span class="string">"onCreate"</span>);  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setContentText</span><span class="params">(String str)</span></span>&#123;  </div><div class="line">mTextView.setText(str);  </div><div class="line">&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class MyActivityOne extends Activity {  
+private final static String TAG=&quot;MyActivityOne&quot;;  
+private EditText mEditText;  
+private Button mButton;  
+private TextView mTextView;  
+private MyApplication myApplication;  
+@Override  
+public void onCreate(Bundle savedInstanceState) {  
+super.onCreate(savedInstanceState);  
+setContentView(R.layout.main);  
+myApplication = (MyApplication)getApplication();  
+myApplication.setActvityOne(this);  
+mEditText = (EditText)findViewById(R.id.edittext1);  
+mButton = (Button)findViewById(R.id.button1);  
+mTextView = (TextView)findViewById(R.id.textview1);  
+mButton.setOnClickListener(new View.OnClickListener() {  
+
+@Override  
+public void onClick(View v) {  
+//设置MyApplication中的值  
+myApplication.setStr(mEditText.getText().toString());  
+Intent intent = new Intent(MyActivityOne.this, MyActivityTwo.class);   
+startActivity(intent);  
+}  
+});  
+Log.v(TAG, &quot;onCreate&quot;);  
+}  
+
+public void setContentText(String str){  
+mTextView.setText(str);  
+}  
+}
+</code></pre>
 <p>MyActivityTwo类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivityTwo</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line"><span class="keyword">private</span> TextView mTextView;  </div><div class="line"><span class="meta">@Override</span>  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line"><span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">setContentView(R.layout.my_activity_two);  </div><div class="line">tvContent = (TextView)findViewById(R.id.textview1);  </div><div class="line">  </div><div class="line">MyApplication myApplication = (MyApplication)getApplication();  </div><div class="line">mTextView.setText(myApplication.getStr());  </div><div class="line">myApplication.getActvityOne().setContentText(<span class="string">"在MyActivityTwo中设置MyActivityOne的TextView的内容"</span>);  </div><div class="line">  </div><div class="line">&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class MyActivityTwo extends Activity {  
+private TextView mTextView;  
+@Override  
+public void onCreate(Bundle savedInstanceState) {  
+super.onCreate(savedInstanceState);  
+setContentView(R.layout.my_activity_two);  
+tvContent = (TextView)findViewById(R.id.textview1);  
+
+MyApplication myApplication = (MyApplication)getApplication();  
+mTextView.setText(myApplication.getStr());  
+myApplication.getActvityOne().setContentText(&quot;在MyActivityTwo中设置MyActivityOne的TextView的内容&quot;);  
+
+}  
+}
+</code></pre>
 <p>以上代码的逻辑就是在MyActivityOne中设置application中的str的值，然后在MyActivityTwo中获取并且显示，然后调用getApplication()得到系统的application对象，由它设置MyActivityOne中的TextView的内容。</p>
 <p>当然要记得在manifest.xml声明自定义的application：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">manifest</span>  </span></div><div class="line"><span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span>  </div><div class="line"><span class="attr">package</span>=<span class="string">"com.ghli.applicationtest"</span>  </div><div class="line"><span class="attr">android:versionCode</span>=<span class="string">"1"</span>  </div><div class="line"><span class="attr">android:versionName</span>=<span class="string">"1.0"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">application</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">".MyApplication"</span> //写自定义的<span class="attr">application</span></div><div class="line"><span class="attr">android:icon</span>=<span class="string">"@drawable/icon"</span>  </div><div class="line"><span class="attr">android:label</span>=<span class="string">"@string/app_name"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">activity</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">".MyActivityOne"</span>   </div><div class="line"><span class="attr">android:label</span>=<span class="string">"@string/app_name"</span>&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">action</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">"android.intent.action.MAIN"</span> /&gt;  </div><div class="line"><span class="tag">&lt;<span class="name">category</span>  </span></div><div class="line"><span class="attr">android:name</span>=<span class="string">"android.intent.category.LAUNCHER"</span> /&gt;  </div><div class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">activity</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">".MyActivityTwo"</span>/&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">application</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;  
+&lt;manifest  
+xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;  
+package=&quot;com.ghli.applicationtest&quot;  
+android:versionCode=&quot;1&quot;  
+android:versionName=&quot;1.0&quot;&gt;  
+&lt;application  
+android:name=&quot;.MyApplication&quot; //写自定义的application
+android:icon=&quot;@drawable/icon&quot;  
+android:label=&quot;@string/app_name&quot;&gt;  
+&lt;activity  
+android:name=&quot;.MyActivityOne&quot;   
+android:label=&quot;@string/app_name&quot;&gt;  
+&lt;intent-filter&gt;  
+&lt;action  
+android:name=&quot;android.intent.action.MAIN&quot; /&gt;  
+&lt;category  
+android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;  
+&lt;/intent-filter&gt;  
+&lt;/activity&gt;  
+&lt;activity android:name=&quot;.MyActivityTwo&quot;/&gt;  
+&lt;/application&gt;  
+&lt;/manifest&gt;
+</code></pre>
 <h2 id="Plus"><a href="#Plus" class="headerlink" title="Plus"></a>Plus</h2><p>常见的在两个activity之间传递数据是通过intent或者bundle来传递的。这里也简单的把它们传递数据的模板贴一下：<br>方法一：1.直接用intent.putExtra(“name”,”zhangsan”)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,OtherActivity.class);</div><div class="line">   intent.putExtra(<span class="string">"name"</span>, <span class="string">"zhnagsan"</span>);</div><div class="line">   intent.putExtra(<span class="string">"age"</span>, <span class="number">25</span>);</div><div class="line">   intent.putExtra(<span class="string">"address"</span>, <span class="string">"shanghai"</span>);</div></pre></td></tr></table></figure>
+<pre><code class="java">    Intent intent = new Intent(MainActivity.this,OtherActivity.class);
+    intent.putExtra(&quot;name&quot;, &quot;zhnagsan&quot;);
+    intent.putExtra(&quot;age&quot;, 25);
+    intent.putExtra(&quot;address&quot;, &quot;shanghai&quot;);
+</code></pre>
 <p>方法二：2.用bundle.putString(“name”,”zhangsan”) ;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(MainActivity.<span class="keyword">this</span>,OtherActivity.class);</div><div class="line">  Bundle bundle = <span class="keyword">new</span> Bundle();</div><div class="line">  bundle.putString(<span class="string">"name"</span>, <span class="string">"lisi"</span>);</div><div class="line">  bundle.putInt(<span class="string">"age"</span>, <span class="number">28</span>);</div><div class="line">  bundle.putString(<span class="string">"address"</span>, <span class="string">"beijing"</span>);</div><div class="line">  intent.putExtras(bundle);     <span class="comment">//将bundle传入intent中。</span></div></pre></td></tr></table></figure>
+<pre><code class="java">     Intent intent = new Intent(MainActivity.this,OtherActivity.class);
+    Bundle bundle = new Bundle();
+    bundle.putString(&quot;name&quot;, &quot;lisi&quot;);
+    bundle.putInt(&quot;age&quot;, 28);
+    bundle.putString(&quot;address&quot;, &quot;beijing&quot;);
+    intent.putExtras(bundle);     //将bundle传入intent中。
+</code></pre>
 <p>相应的取出方法也有两种：<br>方法一：直接用Intent ,  String nameString = intent.getStringExtra(“name”);</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent intent = getIntent();</div><div class="line">String nameString = intent.getStringExtra(<span class="string">"name"</span>);</div><div class="line"><span class="keyword">int</span> age = intent.getIntExtra(<span class="string">"age"</span>,<span class="number">0</span>);</div><div class="line">String addressString = intent.getStringExtra(<span class="string">"address"</span>);</div></pre></td></tr></table></figure>
+<pre><code class="java">    Intent intent = getIntent();
+    String nameString = intent.getStringExtra(&quot;name&quot;);
+    int age = intent.getIntExtra(&quot;age&quot;,0);
+    String addressString = intent.getStringExtra(&quot;address&quot;);
+</code></pre>
 <p>方法二：用bundle , String nameString = bundle.getString(“name”);</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Intent intent = getIntent();</div><div class="line">Bundle bundle = intent.getExtras();</div><div class="line">String nameString = bundle.getString(<span class="string">"name"</span>);</div><div class="line"><span class="keyword">int</span> age = bundle.getInt(<span class="string">"age"</span>);</div><div class="line">String addressString = bundle.getString(<span class="string">"address"</span>);</div></pre></td></tr></table></figure>
+<pre><code class="java">    Intent intent = getIntent();
+    Bundle bundle = intent.getExtras();
+    String nameString = bundle.getString(&quot;name&quot;);
+    int age = bundle.getInt(&quot;age&quot;);
+    String addressString = bundle.getString(&quot;address&quot;);
+</code></pre>
 <p>可以将以下4类数据存在bundle中，然后intent.putExtras(bundle)：</p>
 <ul>
 <li>8种基本数据类型及其数组 </li>
@@ -243,6 +395,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -366,6 +528,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/07/26/Android中的Application类及其用法/", 
+    sourceId: "Android中的Application类及其用法",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -399,7 +572,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -477,11 +650,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,11 +674,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +690,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,23 +714,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -598,14 +771,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

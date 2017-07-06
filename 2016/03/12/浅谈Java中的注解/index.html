@@ -9,6 +9,7 @@
   <title>浅谈Java中的注解 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="概述注解（也被称为元数据）为我们在代码中添加信息提供了一种形式化的方法，使我们可以在稍后某个时刻非常方便地使用这些数据。仔细读这句话，我们可以得到几个关键词“形式化”、“稍后使用”。形式化使得代码变得更加干净易读。注解会在编译期接收类型检查。注解的语法比较简单，以“@”符号开始，JAVA SE5内置了三种，定义在java.lang中的注解：">
+<meta name="keywords" content="注解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Java中的注解">
 <meta property="og:url" content="http://fupinyou.com/2016/03/12/浅谈Java中的注解/index.html">
@@ -54,6 +55,8 @@
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -94,9 +97,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -119,6 +136,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -143,9 +162,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -206,7 +239,10 @@
 <li>@SuppressWarnings，关闭不当的编译器警告信息。要注意的是SuppressWarnings和前两个注释不一样。这个注释有一个属性。当然，还可以抑制其它警告，如:<br>@SuppressWarnings (value={“unchecked”, “fallthrough”})</li>
 </ul>
 <h2 id="定义注解"><a href="#定义注解" class="headerlink" title="定义注解"></a>定义注解</h2><p>Java还另外提供了四种注解，专门负责新注解的创建。注解的定义看起来很像接口发的定义，仔细观察：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Target</span>(ElementType.METHOD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Test &#123;&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Test {}
+</code></pre>
 <p>除了@符号外，@Test的定义很像一个空的接口。定义注解时，需要一些元注解（meta-annotation），如@Target和@Retention，@Target用来定义你的注解将用在什么地方，是方法前还是域前，或者类前。@Retention用来定义该注解在哪一个级别可用，在源代码中（SOURCE)，类文件中（CLASS）或者运行时（RUNTIME)。</p>
 <p>四种元注解分别是@Target，@Retention，@Documented，@Inherited。</p>
 <h3 id="Target注解"><a href="#Target注解" class="headerlink" title="Target注解"></a>Target注解</h3><p>表示注解可用于什么地方。可能的ElementType参数包括：</p>
@@ -226,9 +262,61 @@
 </ul>
 <h3 id="Documented注解"><a href="#Documented注解" class="headerlink" title="Documented注解"></a>Documented注解</h3><p>Documented 注解表明这个注解应该被 javadoc工具记录。默认情况下,javadoc是不包括注解的，但如果声明注解时指定了 @Documented，则它会被 javadoc 之类的工具处理, 所以注解类型信息也会被包括在生成的文档中，标注此类接口、方法、字段已经被废止。</p>
 <h3 id="Inherited注解"><a href="#Inherited注解" class="headerlink" title="Inherited注解"></a>Inherited注解</h3><p>允许子类继承父类中的注解。</p>
-<h2 id="编写注解处理器"><a href="#编写注解处理器" class="headerlink" title="编写注解处理器"></a>编写注解处理器</h2><p>谁用注解的过程中，很重要的一个部分就是创建与使用注解处理器。下面通过一个完整的例子来说明怎么定义与使用注解处理器。<br><strong>注释类</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.lang.annotation.ElementType;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.Retention;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.RetentionPolicy;</div><div class="line"><span class="keyword">import</span> java.lang.annotation.Target;</div><div class="line"></div><div class="line"><span class="meta">@Target</span>(ElementType.METHOD)</div><div class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</div><div class="line"><span class="keyword">public</span> <span class="meta">@interface</span> UseCase&#123;</div><div class="line">     <span class="function"><span class="keyword">int</span> <span class="title">id</span><span class="params">()</span></span>;</div><div class="line">     <span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> "no description"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>使用注释</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PasswordUtils</span> </span>&#123;</div><div class="line">    <span class="meta">@UseCase</span>(id=<span class="number">1</span>,description = <span class="string">"Passwords must contain at least one numeric"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">validatePassword</span><span class="params">(String password)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> (password.matches(<span class="string">"\\w*\\d\\w*"</span>));</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@UseCase</span>(id=<span class="number">2</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">encryptPassword</span><span class="params">(String password)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> StringBuilder(password).reverse().toString();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@UseCase</span>(id=<span class="number">3</span>,description = <span class="string">"New passwords can't equal previously used ones"</span>)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkForNewPassword</span><span class="params">(List&lt;String&gt; prevPasswords,String password)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> !prevPasswords.contains(password);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>注释处理器</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.lang.reflect.Method;</div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"><span class="keyword">import</span> java.util.Collections;</div><div class="line"><span class="keyword">import</span> java.util.List;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UseCaseTracker</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">trackUseCases</span><span class="params">(List&lt;Integer&gt; useCases,Class&lt;?&gt; cl)</span></span>&#123;</div><div class="line">        <span class="keyword">for</span>(Method m:cl.getDeclaredMethods())&#123;</div><div class="line">            UseCase uc=m.getAnnotation(UseCase.class);</div><div class="line">            <span class="keyword">if</span>(uc != <span class="keyword">null</span>)&#123;</div><div class="line">                System.out.println(<span class="string">"Found Use Case:"</span>+uc.id()+<span class="string">" "</span>+uc.description());</div><div class="line">                useCases.remove(<span class="keyword">new</span> Integer(uc.id()));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i:useCases)&#123;</div><div class="line">            System.out.println(<span class="string">"Warning: Missing use case-"</span>+i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        List&lt;Integer&gt; useCases=<span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">        Collections.addAll(useCases,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</div><div class="line">        trackUseCases(useCases,PasswordUtils.class);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="编写注解处理器"><a href="#编写注解处理器" class="headerlink" title="编写注解处理器"></a>编写注解处理器</h2><p>谁用注解的过程中，很重要的一个部分就是创建与使用注解处理器。下面通过一个完整的例子来说明怎么定义与使用注解处理器。<br><strong>注释类</strong></p>
+<pre><code class="java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface UseCase{
+     int id();
+     String description() default &quot;no description&quot;;
+}
+</code></pre>
+<p><strong>使用注释</strong></p>
+<pre><code class="java">public class PasswordUtils {
+    @UseCase(id=1,description = &quot;Passwords must contain at least one numeric&quot;)
+    public boolean validatePassword(String password){
+        return (password.matches(&quot;\\w*\\d\\w*&quot;));
+    }
+    @UseCase(id=2)
+    public String encryptPassword(String password){
+        return new StringBuilder(password).reverse().toString();
+    }
+    @UseCase(id=3,description = &quot;New passwords can&#39;t equal previously used ones&quot;)
+    public boolean checkForNewPassword(List&lt;String&gt; prevPasswords,String password){
+        return !prevPasswords.contains(password);
+    }
+}
+</code></pre>
+<p><strong>注释处理器</strong></p>
+<pre><code class="java">import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class UseCaseTracker {
+    public static void trackUseCases(List&lt;Integer&gt; useCases,Class&lt;?&gt; cl){
+        for(Method m:cl.getDeclaredMethods()){
+            UseCase uc=m.getAnnotation(UseCase.class);
+            if(uc != null){
+                System.out.println(&quot;Found Use Case:&quot;+uc.id()+&quot; &quot;+uc.description());
+                useCases.remove(new Integer(uc.id()));
+            }
+        }
+        for(int i:useCases){
+            System.out.println(&quot;Warning: Missing use case-&quot;+i);
+        }
+    }
+    public static void main(String[] args){
+        List&lt;Integer&gt; useCases=new ArrayList&lt;Integer&gt;();
+        Collections.addAll(useCases,1,2,3,4);
+        trackUseCases(useCases,PasswordUtils.class);
+    }
+}
+</code></pre>
 <p><strong>结果打印输出</strong><br><img src="http://7xq9sc.com1.z0.glb.clouddn.com/%E6%B3%A8%E8%A7%A3%E7%A4%BA%E4%BE%8B%E7%9A%84%E6%89%93%E5%8D%B0.PNG" alt=""></p>
 <p>注解的元素在使用时表现为名-值对的形式，并需要置于@UseCase声明之后的括号内。在encryptPassword()方法的注解中，并没有给出description元素的值，因此，在UseCase的注解处理器分析处理这个类时会使用该元素的默认值。这个程序用到了两个反射的方法getDeclaredMethods()和getAnnotation()，它们都属于AnnotatedElement接口（Class、Method与Field等类都实现了该接口。</p>
 <h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>通过以上例子我们可以看到，注解通常是跟反射机制一起使用的，我在看反射的时候还在想呢，这个反射到底有什么用，你看这儿不是用着了吗，所以知识都是有用的，知识你“暂时”还不知道怎么用罢了。</p>
@@ -248,6 +336,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -371,6 +469,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/03/12/浅谈Java中的注解/", 
+    sourceId: "浅谈Java中的注解",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -404,7 +513,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -482,11 +591,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +615,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +631,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,23 +655,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -603,14 +712,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

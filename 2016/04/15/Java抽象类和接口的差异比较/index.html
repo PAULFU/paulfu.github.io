@@ -8,16 +8,13 @@
   <link rel="dns-prefetch" href="http://fupinyou.com">
   <title>Java抽象类和接口的差异比较 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。
-几个问题接口是否可以继承接口？可以。
-抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
+  <meta name="description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。 几个问题接口是否可以继承接口？可以。 抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java抽象类和接口的差异比较">
 <meta property="og:url" content="http://fupinyou.com/2016/04/15/Java抽象类和接口的差异比较/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。
-几个问题接口是否可以继承接口？可以。
-抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
+<meta property="og:description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。 几个问题接口是否可以继承接口？可以。 抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/hirh.PNG">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/hiuggs.PNG">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/grighihg.PNG">
@@ -27,9 +24,7 @@
 <meta property="og:updated_time" content="2016-04-15T14:48:27.434Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java抽象类和接口的差异比较">
-<meta name="twitter:description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。
-几个问题接口是否可以继承接口？可以。
-抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
+<meta name="twitter:description" content="今天下午看书看到一道关于抽象类和接口的题目，虽然之前看《Java编程思想》的时候感觉自己都弄明白了，但是时隔几个月感觉有些陌生了。不要紧，趁这个机会复习复习吧。 几个问题接口是否可以继承接口？可以。 抽象类是否可以实现接口？抽象类是否可以继承具体类？抽象类是否能拥有static声明的静态方法？都可以。抽象类归根结底还是一个类啊，对于抽象类，我们只需记住它和普通类的唯一区别：">
 <meta name="twitter:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/hirh.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Neulana" type="application/atom+xml">
@@ -64,6 +59,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
 		
 
 		<nav class="header-menu">
@@ -105,9 +102,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -130,6 +141,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -154,9 +167,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -227,9 +254,39 @@
 <h3 id="子类必须实现抽象父类的所有抽象方法吗？"><a href="#子类必须实现抽象父类的所有抽象方法吗？" class="headerlink" title="子类必须实现抽象父类的所有抽象方法吗？"></a>子类必须实现抽象父类的所有抽象方法吗？</h3><p>视情况而定，如果子类也是抽象类，则不必实现父类的所有抽象方法，否则，必须实现父类的所有抽象方法。</p>
 <h3 id="抽象类和接口里可以有内部类吗？"><a href="#抽象类和接口里可以有内部类吗？" class="headerlink" title="抽象类和接口里可以有内部类吗？"></a>抽象类和接口里可以有内部类吗？</h3><p>都可以。这个参考了<a href="http://blog.csdn.net/sunshinestation/article/details/4224780" target="_blank" rel="external">CSDN博客：Java牛角尖【002】：类可以被static修饰吗？</a>,虽然原文主要不是想阐述我这个问题，但是博主的举的例子还是可以参考的，我直接把代码搬运过来吧。</p>
 <p>抽象类中：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticClassDemo</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        StaticClassDemo.InnerClass ic = <span class="keyword">new</span> StaticClassDemo.InnerClass();  </div><div class="line">        ic.showMessage(<span class="string">"Hello, world"</span>);  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">showMessage</span><span class="params">(String msg)</span></span>;  </div><div class="line">      </div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> <span class="keyword">extends</span> <span class="title">StaticClassDemo</span></span>&#123;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showMessage</span><span class="params">(String msg)</span></span>&#123;  </div><div class="line">            System.out.println(msg);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public abstract class StaticClassDemo {  
+
+    public static void main(String[] args) {  
+        StaticClassDemo.InnerClass ic = new StaticClassDemo.InnerClass();  
+        ic.showMessage(&quot;Hello, world&quot;);  
+    }  
+
+    public abstract void showMessage(String msg);  
+
+    static class InnerClass extends StaticClassDemo{  
+        public void showMessage(String msg){  
+            System.out.println(msg);  
+        }  
+    }  
+}
+</code></pre>
 <p>接口中：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StaticClassDemo</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showMessage</span><span class="params">(String msg)</span></span>;  </div><div class="line">      </div><div class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> <span class="keyword">implements</span> <span class="title">StaticClassDemo</span></span>&#123;  </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showMessage</span><span class="params">(String msg)</span></span>&#123;  </div><div class="line">            System.out.println(msg);  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;  </div><div class="line">            StaticClassDemo.InnerClass ic = <span class="keyword">new</span> StaticClassDemo.InnerClass();  </div><div class="line">            ic.showMessage(<span class="string">"Hello, world"</span>);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public interface StaticClassDemo {  
+
+    public void showMessage(String msg);  
+
+    static class InnerClass implements StaticClassDemo{  
+        public void showMessage(String msg){  
+            System.out.println(msg);  
+        }  
+
+        public static void main(String args[]){  
+            StaticClassDemo.InnerClass ic = new StaticClassDemo.InnerClass();  
+            ic.showMessage(&quot;Hello, world&quot;);  
+        }  
+    }  
+}
+</code></pre>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总的说来，内部类还算是一个“类”，所以它拥有与“类”相似的性质，而接口不是“类”，自然是没有构造函数的，但是可以有自己的成员变量，供实现它的各类使用。</p>
 <p>自认为还是菜鸟，如有说错的地方，请多指教。</p>
 
@@ -248,6 +305,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -371,6 +438,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/04/15/Java抽象类和接口的差异比较/", 
+    sourceId: "Java抽象类和接口的差异比较",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -404,7 +482,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -482,11 +560,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,11 +584,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +600,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,23 +624,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -603,14 +681,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

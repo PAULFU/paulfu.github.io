@@ -51,6 +51,8 @@
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -91,9 +93,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -116,6 +132,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -140,9 +158,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -273,7 +305,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>JIRA是一个项目管理工具，跟进项目的进度，支持多种强悍的插件，比如，git,gitlab等，它是一种本地安装软件，但是提供web页面进行管理。</p>
-<p>所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown system variable ‘storage_engine’。这是由于在MySQL 5.7.5 版本中去除了这个变量，用default_storage_engine代替，请见===》<a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_default_storage_engine">MySQL Server System Variables</a>。<br>
+<p>所有关于项目的数据都是保存到数据库的，JIRA支持多种关系型数据库例如MySQL、PostgreSQL、SQL Server，所以就涉及到连接数据库的问题，本文只谈怎么连MySQL。由于MySQL的版本更新的问题，导致连接过程中提示错误：Unknown system variable ‘storage_engine’。这是由于在MySQL 5.7.5 版本中去除了这个变量，用default_storage_engine代替，请见===》<a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_default_storage_engine" target="_blank" rel="external">MySQL Server System Variables</a>。<br>
         
           <a class="article-more-a" href="/2016/10/10/JIRA连接MySQL数据库的坑/#more">more >></a>
         
@@ -417,7 +449,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="XX-printGC"><a href="#XX-printGC" class="headerlink" title="-XX:+printGC"></a>-XX:+printGC</h2><p>可以打印GC的简要信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001606 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001474 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001563 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001682 secs]</div></pre></td></tr></table></figure></p>
+        <h2 id="XX-printGC"><a href="#XX-printGC" class="headerlink" title="-XX:+printGC"></a>-XX:+printGC</h2><p>可以打印GC的简要信息</p>
+<pre><code>[GC 4790K-&gt;374K(15872K), 0.0001606 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001474 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001563 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001682 secs]
+</code></pre>
         
           <a class="article-more-a" href="/2016/09/04/JVM参数配置/#more">more >></a>
         
@@ -489,7 +526,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今日翻看胡凯大神的官方training的<a href="http://hukai.me/android-training-course-in-chinese">翻译版本</a>，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。</p>
+        <p>今日翻看胡凯大神的官方training的<a href="http://hukai.me/android-training-course-in-chinese" target="_blank" rel="external">翻译版本</a>，发现已经跟不上官方的版本的更新了，遂直接看英文原版，虽然英语不算好，但是好在没有特别难理解的单词和句子。看了好几篇之后发现虽然知识点比较简单，但是容易忘。我将把关键知识点记录在此，方便以后翻阅。如果能够帮助到任何其他路过的朋友，那是再好不过了。每一个标题对应着官方的相应章节。</p>
 <h3 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h3><p>1、在EditText中想要在用户没有输入时给出提示信息，可以使用android:hint=”@string/edit_message”。</p>
 <p>2、使用android:layout_weight=”1”，即根据权重来计算各个组件的宽度，使得填满手机屏幕的宽度。这是组件的宽度还应该设为android:layout_width=”0dp”，如果设置成wrap_content，这时的宽度属性也起不到任何作用。如果给View设置了match_parent的属性，那么上面计算权重时则不是通常的正比，而是反比，也就是权重值大的反而占据空间小。</p>
         
@@ -637,7 +674,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>;</div></pre></td></tr></table></figure>
+<pre><code class="java">protected native Object clone() throws CloneNotSupportedException;
+</code></pre>
 <p>仔细一看，它还是一个native方法，大家都知道native方法是非Java语言实现的代码，供Java程序调用的，因为Java程序是运行在JVM虚拟机上面的，要想访问到比较底层的与操作系统相关的就没办法了，只能由靠近操作系统的语言来实现。</p>
         
           <a class="article-more-a" href="/2016/07/25/Java进阶系列之对象克隆/#more">more >></a>
@@ -942,7 +980,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -1020,11 +1058,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1040,11 +1082,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1052,11 +1098,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,23 +1122,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1141,14 +1179,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

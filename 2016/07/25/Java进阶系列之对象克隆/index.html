@@ -8,22 +8,17 @@
   <link rel="dns-prefetch" href="http://fupinyou.com">
   <title>Java进阶系列之对象克隆 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()：
-1protected native Object clone() throws CloneNotSupportedException;
-仔细一看，它还是">
+  <meta name="description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()： protected native Object clone() throws CloneNotSupportedException;  仔细一看，它还是">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java进阶系列之对象克隆">
 <meta property="og:url" content="http://fupinyou.com/2016/07/25/Java进阶系列之对象克隆/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()：
-1protected native Object clone() throws CloneNotSupportedException;
-仔细一看，它还是">
+<meta property="og:description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()： protected native Object clone() throws CloneNotSupportedException;  仔细一看，它还是">
 <meta property="og:updated_time" content="2016-07-25T17:48:26.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java进阶系列之对象克隆">
-<meta name="twitter:description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()：
-1protected native Object clone() throws CloneNotSupportedException;
-仔细一看，它还是">
+<meta name="twitter:description" content="大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()： protected native Object clone() throws CloneNotSupportedException;  仔细一看，它还是">
   
     <link rel="alternative" href="/atom.xml" title="Neulana" type="application/atom+xml">
   
@@ -57,6 +52,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
 		
 
 		<nav class="header-menu">
@@ -98,9 +95,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,6 +134,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -147,9 +160,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -204,19 +231,73 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>大家都知道在Java中所有的类都是缺省的继承自Java语言包中的Object类的，查看它的源码，你可以把你的JDK目录下的src.zip复制到其他地方然后解压，里面就是所有的源码。发现里面有一个访问限定符为protected的方法clone()：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">native</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span>;</div></pre></td></tr></table></figure>
+<pre><code class="java">protected native Object clone() throws CloneNotSupportedException;
+</code></pre>
 <p>仔细一看，它还是一个native方法，大家都知道native方法是非Java语言实现的代码，供Java程序调用的，因为Java程序是运行在JVM虚拟机上面的，要想访问到比较底层的与操作系统相关的就没办法了，只能由靠近操作系统的语言来实现。</p>
 <a id="more"></a>
 <h2 id="为什么要克隆？"><a href="#为什么要克隆？" class="headerlink" title="为什么要克隆？"></a>为什么要克隆？</h2><p>大家先思考一个问题，为什么需要克隆对象？直接new一个对象不行吗？答案是：克隆的对象可能包含一些已经修改过的属性，而new出来的对象的属性都还是初始化时候的值，所以当需要一个新的对象来保存当前对象的“状态”就靠clone方法了。那么我把这个对象的临时属性一个一个的赋值给我新new的对象不也行嘛？可以是可以，但是一来麻烦不说，二来，大家通过上面的源码都发现了clone是一个native方法，就是快啊，在底层实现的。提个醒，我们常见的Object a=new Object();Object b;b=a;这种形式的代码复制的是引用，即对象在内存中的地址，a和b对象仍然指向了同一个对象。而通过clone方法赋值的对象跟原来的对象时同时独立存在的。扯了这么多废话，终于进入正题了ORZ。</p>
 <h1 id="如何实现克隆"><a href="#如何实现克隆" class="headerlink" title="如何实现克隆"></a>如何实现克隆</h1><p>简单到你不敢相信。直接在你的类的后面声明<strong>implements Cloneable</strong>。关于这个接口，它的源码如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cloneable</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public interface Cloneable {
+}
+</code></pre>
 <p>可以看到它是一个空的接口，它的作用就是做标记。如果没有实现Cloneable接口就直接使用clone方法，程序会抛出CloneNotSupportedException异常。<br>然后是重写clone方法，并修改成public访问级别。举个经典的栗子：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span> name;</div><div class="line">    <span class="keyword">public</span> Inner inner;</div><div class="line">      </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">super</span>.clone();</div><div class="line">    &#125;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">	Outer o_one = <span class="keyword">new</span> Outer();</div><div class="line">	o_one.inner = <span class="keyword">new</span> Inner(<span class="string">"zhangsan"</span>);</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">  	Object obj = o_one.clone();</div><div class="line">  	Outer o_two = (Outer)obj;</div><div class="line">  	System.out.println(o_one==o_two);    <span class="comment">//打印false</span></div><div class="line">  	System.out.println(o_one.inner.name.equals(o_two.inner.name)); <span class="comment">//打印true</span></div><div class="line">	&#125; <span class="keyword">catch</span> (CloneNotSupportedException e) &#123;</div><div class="line"> 	 e.printStackTrace();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">class Outer implements Cloneable {
+    public int name;
+    public Inner inner;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      return super.clone();
+    }
+public static void main(String[] args){
+    Outer o_one = new Outer();
+    o_one.inner = new Inner(&quot;zhangsan&quot;);
+    try {
+      Object obj = o_one.clone();
+      Outer o_two = (Outer)obj;
+      System.out.println(o_one==o_two);    //打印false
+      System.out.println(o_one.inner.name.equals(o_two.inner.name)); //打印true
+    } catch (CloneNotSupportedException e) {
+      e.printStackTrace();
+    }
+}
+}
+</code></pre>
 <p>上面的代码实现的其实是浅克隆，浅克隆对于引用类型仅拷贝引用，没有真正地让两个对象独立开来互相之间没有任何关系。由于是浅克隆，使得imp2修改了child的某个属性后会是的imp1中child的属性也跟着改变。或者比较两个对象的地址：imp1.child==imp2.child，返回的结果是true。但是，如果一个对象只包含原始数据域或者不可变对象域（比如String类型），推荐使用浅克隆。</p>
 <h2 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h2><p>类中的所有引用类型做一些修改，让它也实现Cloneable接口。然后修改本类中的clone方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> <span class="keyword">implements</span>  <span class="title">Cloneable</span></span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">public</span> String name;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Child</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">      <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">"Inner的name值为："</span> + name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">super</span>.clone();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class Inner implements  Cloneable{
+
+  public String name;
+
+  public Child(String name) {
+      this.name = name;
+  }
+
+  @Override
+  public String toString() {
+      return &quot;Inner的name值为：&quot; + name;
+  }
+
+  @Override
+  protected Object clone() throws CloneNotSupportedException {
+      return super.clone();
+  }
+}
+</code></pre>
 <p>修改本类的clone方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> <span class="keyword">implements</span> <span class="title">Cloneable</span> </span>&#123;</div><div class="line">  <span class="keyword">public</span> <span class="keyword">int</span> count;</div><div class="line">  <span class="keyword">public</span> Inner inner;</div><div class="line">      </div><div class="line">      </div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</div><div class="line">      Outer obj = (Outer)<span class="keyword">super</span>.clone();</div><div class="line">      obj.inner = (Inner) inner.clone();</div><div class="line">      <span class="keyword">return</span> obj;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">static class Outer implements Cloneable {
+  public int count;
+  public Inner inner;
+
+
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+      Outer obj = (Outer)super.clone();
+      obj.inner = (Inner) inner.clone();
+      return obj;
+  }
+}
+</code></pre>
 <p>画重点了：</p>
 <ul>
 <li>需要重写clone方法，不仅仅只调用父类的方法，还需调用属性的clone方法；</li>
@@ -225,9 +306,44 @@
 <li>深克隆比浅克隆要更加耗时，效率更低</li>
 </ul>
 <h2 id="解决多层克隆问题"><a href="#解决多层克隆问题" class="headerlink" title="解决多层克隆问题"></a>解决多层克隆问题</h2><p>如果引用类型里面还包含很多引用类型，或者内层引用类型的类里面又包含引用类型，使用clone方法就会很麻烦。这时我们可以用序列化的方式来实现对象的深克隆。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Outer</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">369285298572941L</span>;  <span class="comment">//最好是显式声明ID</span></div><div class="line">  <span class="keyword">public</span> Inner inner;</div><div class="line">  </div><div class="line">  <span class="function"><span class="keyword">public</span> Outer <span class="title">myclone</span><span class="params">()</span> </span>&#123;</div><div class="line">      Outer outer = <span class="keyword">null</span>;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">          ByteArrayOutputStream baos = <span class="keyword">new</span> ByteArrayOutputStream();</div><div class="line">          ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(baos);</div><div class="line">          oos.writeObject(<span class="keyword">this</span>);</div><div class="line">  </div><div class="line">          ByteArrayInputStream bais = <span class="keyword">new</span> ByteArrayInputStream(baos.toByteArray());</div><div class="line">          ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(bais);</div><div class="line">          outer = (Outer) ois.readObject();</div><div class="line">      &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">          e.printStackTrace();</div><div class="line">      &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</div><div class="line">          e.printStackTrace();</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> outer;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class Outer implements Serializable{
+  private static final long serialVersionUID = 369285298572941L;  //最好是显式声明ID
+  public Inner inner;
+
+  public Outer myclone() {
+      Outer outer = null;
+      try {
+          ByteArrayOutputStream baos = new ByteArrayOutputStream();
+          ObjectOutputStream oos = new ObjectOutputStream(baos);
+          oos.writeObject(this);
+
+          ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+          ObjectInputStream ois = new ObjectInputStream(bais);
+          outer = (Outer) ois.readObject();
+      } catch (IOException e) {
+          e.printStackTrace();
+      } catch (ClassNotFoundException e) {
+          e.printStackTrace();
+      }
+      return outer;
+  }
+}
+</code></pre>
 <p>Inner也必须实现Serializable，否则无法序列化：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</div><div class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">872390113109L</span>; <span class="comment">//最好是显式声明ID</span></div><div class="line">  <span class="keyword">public</span> String name = <span class="string">""</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Inner</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">      <span class="keyword">this</span>.name = name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">"Inner的name值为："</span> + name;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="java">public class Inner implements Serializable{
+  private static final long serialVersionUID = 872390113109L; //最好是显式声明ID
+  public String name = &quot;&quot;;
+
+  public Inner(String name) {
+      this.name = name;
+  }
+
+  @Override
+  public String toString() {
+      return &quot;Inner的name值为：&quot; + name;
+  }
+}
+</code></pre>
 <p>这样也能使两个对象在内存空间内完全独立存在，互不影响对方的值。</p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
 <li>在克隆方法中，如果我们需要对可变对象的final域也进行拷贝，由于final的限制，所以实际上是无法编译通过的。因此为了实现克隆，我们需要考虑舍去该可变对象域的final关键字。</li>
@@ -249,6 +365,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -372,6 +498,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/07/25/Java进阶系列之对象克隆/", 
+    sourceId: "Java进阶系列之对象克隆",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -405,7 +542,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -483,11 +620,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,11 +644,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,11 +660,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,23 +684,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -604,14 +741,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

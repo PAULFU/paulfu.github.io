@@ -8,12 +8,13 @@
   <link rel="dns-prefetch" href="http://fupinyou.com">
   <title>JVM参数配置 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="-XX:+printGC可以打印GC的简要信息1234[GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
+  <meta name="description" content="-XX:+printGC可以打印GC的简要信息 [GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
+<meta name="keywords" content="JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM参数配置">
 <meta property="og:url" content="http://fupinyou.com/2016/09/04/JVM参数配置/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="-XX:+printGC可以打印GC的简要信息1234[GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
+<meta property="og:description" content="-XX:+printGC可以打印GC的简要信息 [GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/0f5a5550-9611-4a5f-a684-2a50caf9a7fa.jpg">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/fba83cb4-8331-4f03-8c32-63c7e1ae9fc4.jpg">
 <meta property="og:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/5ccaf75e-95c8-4fa3-a89a-7b8eb31f2784.jpg">
@@ -21,7 +22,7 @@
 <meta property="og:updated_time" content="2016-09-26T14:36:06.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM参数配置">
-<meta name="twitter:description" content="-XX:+printGC可以打印GC的简要信息1234[GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs][GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
+<meta name="twitter:description" content="-XX:+printGC可以打印GC的简要信息 [GC 4790K-&amp;gt;374K(15872K), 0.0001606 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001474 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001563 secs] [GC 4790K-&amp;gt;374K(15872K), 0.0001682 secs]">
 <meta name="twitter:image" content="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/0f5a5550-9611-4a5f-a684-2a50caf9a7fa.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Neulana" type="application/atom+xml">
@@ -56,6 +57,8 @@
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
 		
 
 		<nav class="header-menu">
@@ -97,9 +100,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -122,6 +139,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -146,9 +165,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -202,26 +235,53 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="XX-printGC"><a href="#XX-printGC" class="headerlink" title="-XX:+printGC"></a>-XX:+printGC</h2><p>可以打印GC的简要信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001606 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001474 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001563 secs]</div><div class="line">[GC 4790K-&gt;374K(15872K), 0.0001682 secs]</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
+        <h2 id="XX-printGC"><a href="#XX-printGC" class="headerlink" title="-XX:+printGC"></a>-XX:+printGC</h2><p>可以打印GC的简要信息</p>
+<pre><code>[GC 4790K-&gt;374K(15872K), 0.0001606 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001474 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001563 secs]
+[GC 4790K-&gt;374K(15872K), 0.0001682 secs]
+</code></pre><a id="more"></a>
 <h2 id="XX-PrintGCDetails"><a href="#XX-PrintGCDetails" class="headerlink" title="-XX:+PrintGCDetails"></a>-XX:+PrintGCDetails</h2><p>打印GC详细信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[GC[DefNew: 4416K-&gt;0K(4928K), 0.0001897 secs] 4790K-&gt;374K(15872K), 0.0002232 secs] [Times: user=0.00</div></pre></td></tr></table></figure>
-<h2 id="XX-PrintGCTimeStamps"><a href="#XX-PrintGCTimeStamps" class="headerlink" title="-XX:+PrintGCTimeStamps"></a>-XX:+PrintGCTimeStamps</h2><p>打印CG发生的时间戳</p>
+<pre><code>[GC[DefNew: 4416K-&gt;0K(4928K), 0.0001897 secs] 4790K-&gt;374K(15872K), 0.0002232 secs] [Times: user=0.00
+</code></pre><h2 id="XX-PrintGCTimeStamps"><a href="#XX-PrintGCTimeStamps" class="headerlink" title="-XX:+PrintGCTimeStamps"></a>-XX:+PrintGCTimeStamps</h2><p>打印CG发生的时间戳</p>
 <p><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/0f5a5550-9611-4a5f-a684-2a50caf9a7fa.jpg" alt=""></p>
 <h2 id="Xloggc-log-gc-log"><a href="#Xloggc-log-gc-log" class="headerlink" title="Xloggc:log/gc.log"></a>Xloggc:log/gc.log</h2><p>指定GC log的位置，以文件输出</p>
 <p>帮助开发人员分析问题</p>
 <h2 id="XX-PrintHeapAtGC"><a href="#XX-PrintHeapAtGC" class="headerlink" title="-XX:+PrintHeapAtGC"></a>-XX:+PrintHeapAtGC</h2><p>每次一次GC后，都打印堆信息<br><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/fba83cb4-8331-4f03-8c32-63c7e1ae9fc4.jpg" alt=""></p>
 <h2 id="XX-TraceClassLoading"><a href="#XX-TraceClassLoading" class="headerlink" title="-XX:+TraceClassLoading"></a>-XX:+TraceClassLoading</h2><p>监控类的加载</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[Loaded java.lang.Object from shared objects file]</div><div class="line">[Loaded java.io.Serializable from shared objects file]</div><div class="line">[Loaded java.lang.Comparable from shared objects file]</div><div class="line">[Loaded java.lang.CharSequence from shared objects file]</div><div class="line">[Loaded java.lang.String from shared objects file]</div><div class="line">[Loaded java.lang.reflect.GenericDeclaration from shared objects file]</div><div class="line">[Loaded java.lang.reflect.Type from shared objects file]</div></pre></td></tr></table></figure>
-<h2 id="XX-PrintClassHistogram"><a href="#XX-PrintClassHistogram" class="headerlink" title="XX:+PrintClassHistogram"></a>XX:+PrintClassHistogram</h2><p>按下Ctrl+Break后，打印类的信息</p>
+<pre><code>[Loaded java.lang.Object from shared objects file]
+[Loaded java.io.Serializable from shared objects file]
+[Loaded java.lang.Comparable from shared objects file]
+[Loaded java.lang.CharSequence from shared objects file]
+[Loaded java.lang.String from shared objects file]
+[Loaded java.lang.reflect.GenericDeclaration from shared objects file]
+[Loaded java.lang.reflect.Type from shared objects file]
+</code></pre><h2 id="XX-PrintClassHistogram"><a href="#XX-PrintClassHistogram" class="headerlink" title="XX:+PrintClassHistogram"></a>XX:+PrintClassHistogram</h2><p>按下Ctrl+Break后，打印类的信息</p>
 <p>如下表所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> num     #instances         #bytes  class name</div><div class="line">----------------------------------------------</div><div class="line">   1:        890617      470266000  [B</div><div class="line">   2:        890643       21375432  java.util.HashMap$Node</div><div class="line">   3:        890608       14249728  java.lang.Long</div><div class="line">   4:            13        8389712  [Ljava.util.HashMap$Node;</div><div class="line">   5:          2062         371680  [C</div><div class="line">   6:           463          41904  java.lang.Class</div></pre></td></tr></table></figure>
-<p>分别显示：序号、实例数量、总大小、类型</p>
+<pre><code> num     #instances         #bytes  class name
+----------------------------------------------
+   1:        890617      470266000  [B
+   2:        890643       21375432  java.util.HashMap$Node
+   3:        890608       14249728  java.lang.Long
+   4:            13        8389712  [Ljava.util.HashMap$Node;
+   5:          2062         371680  [C
+   6:           463          41904  java.lang.Class
+</code></pre><p>分别显示：序号、实例数量、总大小、类型</p>
 <h2 id="Xmx-–Xms"><a href="#Xmx-–Xms" class="headerlink" title="-Xmx –Xms"></a>-Xmx –Xms</h2><p>指定最大堆和最小堆</p>
-<p>-Xmx20m -Xms5m  运行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">System.out.print(&quot;Xmx=&quot;);</div><div class="line">System.out.println(Runtime.getRuntime().maxMemory()/1024.0/1024+&quot;M&quot;);</div><div class="line"></div><div class="line">System.out.print(&quot;free mem=&quot;);</div><div class="line">System.out.println(Runtime.getRuntime().freeMemory()/1024.0/1024+&quot;M&quot;);</div><div class="line"></div><div class="line">System.out.print(&quot;total mem=&quot;);</div><div class="line">System.out.println(Runtime.getRuntime().totalMemory()/1024.0/1024+&quot;M&quot;);</div></pre></td></tr></table></figure></p>
-<p>运行结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Xmx=19.375M</div><div class="line">free mem=4.342750549316406M</div><div class="line">total mem=4.875M</div></pre></td></tr></table></figure>
-<h2 id="Xmn"><a href="#Xmn" class="headerlink" title="-Xmn"></a>-Xmn</h2><p>设置新生代大小</p>
+<p>-Xmx20m -Xms5m  运行代码：</p>
+<pre><code>System.out.print(&quot;Xmx=&quot;);
+System.out.println(Runtime.getRuntime().maxMemory()/1024.0/1024+&quot;M&quot;);
+
+System.out.print(&quot;free mem=&quot;);
+System.out.println(Runtime.getRuntime().freeMemory()/1024.0/1024+&quot;M&quot;);
+
+System.out.print(&quot;total mem=&quot;);
+System.out.println(Runtime.getRuntime().totalMemory()/1024.0/1024+&quot;M&quot;);
+</code></pre><p>运行结果：</p>
+<pre><code>Xmx=19.375M
+free mem=4.342750549316406M
+total mem=4.875M
+</code></pre><h2 id="Xmn"><a href="#Xmn" class="headerlink" title="-Xmn"></a>-Xmn</h2><p>设置新生代大小</p>
 <p>设置绝对大小，设置成15M，堆的大小就是15M</p>
 <h2 id="XX-NewRatio"><a href="#XX-NewRatio" class="headerlink" title="-XX:NewRatio"></a>-XX:NewRatio</h2><p>新生代（eden+2*s）和老年代（不包含永久区）的比值</p>
 <p>4 表示 新生代:老年代=1:4，即年轻代占堆的1/5</p>
@@ -229,10 +289,14 @@
 <p>8表示 两个Survivor :eden=2:8，即一个Survivor占年轻代的1/10</p>
 <h2 id="XX-HeapDumpOnOutOfMemoryError"><a href="#XX-HeapDumpOnOutOfMemoryError" class="headerlink" title="-XX:+HeapDumpOnOutOfMemoryError"></a>-XX:+HeapDumpOnOutOfMemoryError</h2><p>OOM时导出堆到文件</p>
 <h2 id="XX-HeapDumpPath"><a href="#XX-HeapDumpPath" class="headerlink" title="-XX:+HeapDumpPath"></a>-XX:+HeapDumpPath</h2><p>导出OOM的路径</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-Xmx20m -Xms5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=d:/a.dump</div><div class="line">Vector v=new Vector();</div><div class="line">        for(int i=0;i&lt;25;i++)</div><div class="line">            v.add(new byte[1*1024*1024]);</div></pre></td></tr></table></figure>
-<p><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/5ccaf75e-95c8-4fa3-a89a-7b8eb31f2784.jpg" alt=""></p>
-<h2 id="XX-OnOutOfMemoryError"><a href="#XX-OnOutOfMemoryError" class="headerlink" title="XX:OnOutOfMemoryError"></a>XX:OnOutOfMemoryError</h2><p>在OOM时，执行一个脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;-XX:OnOutOfMemoryError=D:/tools/jdk1.7_40/bin/printstack.bat %p“</div></pre></td></tr></table></figure></p>
-<p>当程序OOM时，在D:/a.txt中将会生成线程的dump<br>可以在OOM时，发送邮件，甚至是重启程序<br><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/c4e13fe5-7496-4d7c-808d-10de24e95569.jpg" alt=""></p>
+<pre><code>-Xmx20m -Xms5m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=d:/a.dump
+Vector v=new Vector();
+        for(int i=0;i&lt;25;i++)
+            v.add(new byte[1*1024*1024]);
+</code></pre><p><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/5ccaf75e-95c8-4fa3-a89a-7b8eb31f2784.jpg" alt=""></p>
+<h2 id="XX-OnOutOfMemoryError"><a href="#XX-OnOutOfMemoryError" class="headerlink" title="XX:OnOutOfMemoryError"></a>XX:OnOutOfMemoryError</h2><p>在OOM时，执行一个脚本</p>
+<pre><code>&quot;-XX:OnOutOfMemoryError=D:/tools/jdk1.7_40/bin/printstack.bat %p“
+</code></pre><p>当程序OOM时，在D:/a.txt中将会生成线程的dump<br>可以在OOM时，发送邮件，甚至是重启程序<br><img src="http://7xq9sc.com1.z0.glb.clouddn.com/image/jvm/canshupeizhi/c4e13fe5-7496-4d7c-808d-10de24e95569.jpg" alt=""></p>
 <h2 id="堆的分配参数-–-总结"><a href="#堆的分配参数-–-总结" class="headerlink" title="堆的分配参数 – 总结"></a>堆的分配参数 – 总结</h2><p>根据实际事情调整新生代和幸存代的大小<br>官方推荐新生代占堆的3/8<br>幸存代占新生代的1/10<br>在OOM时，记得Dump出堆，确保可以排查现场问题</p>
 <p>以下是永久区分配参数</p>
 <h2 id="XX-PermSize-XX-MaxPermSize"><a href="#XX-PermSize-XX-MaxPermSize" class="headerlink" title="-XX:PermSize  -XX:MaxPermSize"></a>-XX:PermSize  -XX:MaxPermSize</h2><p>设置永久区的初始空间和最大空间</p>
@@ -255,6 +319,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -378,6 +452,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/09/04/JVM参数配置/", 
+    sourceId: "JVM参数配置",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -411,7 +496,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -489,11 +574,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,11 +598,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,11 +614,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,23 +638,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -610,14 +695,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>

@@ -9,6 +9,7 @@
   <title>使用VNC连接远程Linux桌面 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="最近在Linux服务器上面配置JIRA，我按照官方的文档一步步做下来，发现必须要连接到Linux桌面系统，因为需要打开浏览器在网页里面做一些配置，比如使用MySQL数据库，建立账号等等，以前都是命令行操作，使用SSH连接到shell就满足了。之前听人说过用RealVNC可以连接到远程桌面。于是又停下来转而去折腾VNC了。">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用VNC连接远程Linux桌面">
 <meta property="og:url" content="http://fupinyou.com/2016/09/26/使用VNC连接远程Linux桌面/index.html">
@@ -52,6 +53,8 @@
 		  <h1 class="header-author"><a href="/">Neulana</a></h1>
 		</hgroup>
 		
+		<p class="header-subtitle">日常写Bug，擅长开坑</p>
+		
 
 		<nav class="header-menu">
 			<ul>
@@ -92,9 +95,23 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+		        
+					<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+		        
+					<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+		        
+					<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+		        
+					<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+		        
 					<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+					<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
 		</nav>
@@ -117,6 +134,8 @@
 			<hgroup>
 			  <h1 class="header-author js-header-author">Neulana</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>日常写Bug，擅长开坑<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -141,9 +160,23 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/ayouhappiness" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/pinyoufu" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="qq" target="_blank" href="/365999802" title="qq"><i class="icon-qq"></i></a>
+			        
+						<a class="weixin" target="_blank" href="/fuyi19948888" title="weixin"><i class="icon-weixin"></i></a>
+			        
+						<a class="jianshu" target="_blank" href="http://www.jianshu.com/users/9f0ba47c6e24" title="jianshu"><i class="icon-jianshu"></i></a>
+			        
+						<a class="douban" target="_blank" href="https://www.douban.com/people/94946501/" title="douban"><i class="icon-douban"></i></a>
+			        
+						<a class="bilibili" target="_blank" href="http://space.bilibili.com/16845905/#!/" title="bilibili"><i class="icon-bilibili"></i></a>
+			        
 						<a class="mail" target="_blank" href="mailto:fupinyou@gmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/pittwell" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
 			</nav>
@@ -199,16 +232,65 @@
       
         <p>最近在Linux服务器上面配置JIRA，我按照官方的文档一步步做下来，发现必须要连接到Linux桌面系统，因为需要打开浏览器在网页里面做一些配置，比如使用MySQL数据库，建立账号等等，以前都是命令行操作，使用SSH连接到shell就满足了。之前听人说过用RealVNC可以连接到远程桌面。于是又停下来转而去折腾VNC了。<br><a id="more"></a></p>
 <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>前往这里下载：<a href="https://www.realvnc.com/download/vnc/" target="_blank" rel="external">VNC官方下载地址</a>，我的是Windows系统，所以直接下载EXE文件然后点击安装，基本上就是一路Next下来即可，这没什么好讲的。</p>
-<h2 id="Ubuntu服务器配置"><a href="#Ubuntu服务器配置" class="headerlink" title="Ubuntu服务器配置"></a>Ubuntu服务器配置</h2><p>首先安装vncserver服务:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vnc4server</div></pre></td></tr></table></figure></p>
-<p>接着开启服务，如果你想访问root用户的桌面环境就用sudo vncserver，如果访问当前普通用户的环境就直接vncserver即可，首次启动会要求设置密码，用来在客户端访问时使用，后面可以使用vncpasswd修改。启动vnc成功后，会在主目录下产生一个.vnc目录。值得注意的是，VNC可以开启多个桌面供不同的客户端同时访问，所以它由一个桌面号的概念，每次启动VNC Server时，它会自动为这次启动的服务分配一个桌面号，是从1开始的。</p>
+<h2 id="Ubuntu服务器配置"><a href="#Ubuntu服务器配置" class="headerlink" title="Ubuntu服务器配置"></a>Ubuntu服务器配置</h2><p>首先安装vncserver服务:</p>
+<pre><code>sudo apt-get install vnc4server
+</code></pre><p>接着开启服务，如果你想访问root用户的桌面环境就用sudo vncserver，如果访问当前普通用户的环境就直接vncserver即可，首次启动会要求设置密码，用来在客户端访问时使用，后面可以使用vncpasswd修改。启动vnc成功后，会在主目录下产生一个.vnc目录。值得注意的是，VNC可以开启多个桌面供不同的客户端同时访问，所以它由一个桌面号的概念，每次启动VNC Server时，它会自动为这次启动的服务分配一个桌面号，是从1开始的。</p>
 <h2 id="连接到桌面"><a href="#连接到桌面" class="headerlink" title="连接到桌面"></a>连接到桌面</h2><p>做到这步后，用你的VNC Viewer连接远程Ubuntu，你放心，还是只能看到一个shell。嗯，还没有达到目的，我们是要连接桌面而非shell。你可以打开在启动VNC时输出的log日志消息，Ubuntu系统多半都是下面这个错误：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">……</div><div class="line">gnome-session-is-accelerated: No composite extension.</div><div class="line">gnome-session-check-accelerated: Helper exited with code 256</div><div class="line">gnome-session-is-accelerated: No composite extension.</div><div class="line">gnome-session-check-accelerated: Helper exited with code 256</div><div class="line"></div><div class="line">** (process:6694): WARNING **: software acceleration check failed: Child process exited with code 1</div><div class="line"></div><div class="line">** (gnome-session:6694): CRITICAL **: We failed, but the fail whale is dead. Sorry....</div><div class="line">……</div></pre></td></tr></table></figure>
-<p>你看到fail这个单词就说明连接失败了，我在网上找了很久，发现有的博客写的东西根本无法解决这个问题，也许他自己当时是那么解决的，但是你和他的情况不是完全一样的。我这里也提供一个方法，你可以试一下，兴许就能解决这个问题：<br>ubuntu下载命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</div></pre></td></tr></table></figure></p>
-<p>然后修改xstartup文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line"></div><div class="line">export XKL_XMODMAP_DISABLE=1</div><div class="line">unset SESSION_MANAGER</div><div class="line">unset DBUS_SESSION_BUS_ADDRESS</div><div class="line"></div><div class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</div><div class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</div><div class="line">xsetroot -solid grey</div><div class="line">vncconfig -iconic &amp;</div><div class="line"></div><div class="line">gnome-session &amp;</div><div class="line">gnome-panel &amp;</div><div class="line">gnome-settings-daemon &amp;</div><div class="line">metacity &amp;</div><div class="line">nautilus &amp;</div><div class="line">gnome-terminal &amp;</div><div class="line">vncconfig -nowin &amp;</div></pre></td></tr></table></figure></p>
-<p>然后重启VNC服务即可。<br>也可以通过安装KDE/XFCE来解决：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install gnome-core xfce4 firefox</div><div class="line">$ vim ~/.vnc/xstartup  #修改此文件,写入以下内容</div><div class="line">#!/bin/sh</div><div class="line">unset SESSION_MANAGER</div><div class="line">unset DBUS_SESSION_BUS_ADDRESS</div><div class="line">startxfce4 &amp;</div><div class="line">#gnome-session --session=gnome-flashback &amp;</div><div class="line"></div><div class="line">[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup</div><div class="line">[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources</div><div class="line">xsetroot -solid grey</div><div class="line">vncconfig -iconic &amp;</div></pre></td></tr></table></figure></p>
-<p>真是错误不断，log日志还说字体还找不到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">error opening security policy file /etc/X11/xserver/SecurityPolicy</div><div class="line">Could not init font path element /usr/share/fonts/X11/cyrillic, removing from list!</div><div class="line">Could not init font path element /usr/share/fonts/X11/100dpi/:unscaled, removing from list!</div><div class="line">Could not init font path element /usr/share/fonts/X11/75dpi/:unscaled, removing from list!</div><div class="line">Could not init font path element /usr/share/fonts/X11/100dpi, removing from list!</div><div class="line">Could not init font path element /usr/share/fonts/X11/75dpi, removing from list!</div><div class="line">Could not init font path element built-ins, removing from list!</div></pre></td></tr></table></figure></p>
-<p>其实这个错误是不影响你远程连接Linux桌面的，如果你不是特别完美主义的话，到这儿可以不管它了。但是你还是想要解决的话，方法还是有的，解决办法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo aptitude install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic</div></pre></td></tr></table></figure></p>
+<pre><code>……
+gnome-session-is-accelerated: No composite extension.
+gnome-session-check-accelerated: Helper exited with code 256
+gnome-session-is-accelerated: No composite extension.
+gnome-session-check-accelerated: Helper exited with code 256
 
+** (process:6694): WARNING **: software acceleration check failed: Child process exited with code 1
+
+** (gnome-session:6694): CRITICAL **: We failed, but the fail whale is dead. Sorry....
+……
+</code></pre><p>你看到fail这个单词就说明连接失败了，我在网上找了很久，发现有的博客写的东西根本无法解决这个问题，也许他自己当时是那么解决的，但是你和他的情况不是完全一样的。我这里也提供一个方法，你可以试一下，兴许就能解决这个问题：<br>ubuntu下载命令：</p>
+<pre><code>$ sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+</code></pre><p>然后修改xstartup文件：</p>
+<pre><code>#!/bin/sh
+
+export XKL_XMODMAP_DISABLE=1
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &amp;
+
+gnome-session &amp;
+gnome-panel &amp;
+gnome-settings-daemon &amp;
+metacity &amp;
+nautilus &amp;
+gnome-terminal &amp;
+vncconfig -nowin &amp;
+</code></pre><p>然后重启VNC服务即可。<br>也可以通过安装KDE/XFCE来解决：</p>
+<pre><code>$ sudo apt-get install gnome-core xfce4 firefox
+$ vim ~/.vnc/xstartup  #修改此文件,写入以下内容
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+startxfce4 &amp;
+#gnome-session --session=gnome-flashback &amp;
+
+[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &amp;
+</code></pre><p>真是错误不断，log日志还说字体还找不到：</p>
+<pre><code>error opening security policy file /etc/X11/xserver/SecurityPolicy
+Could not init font path element /usr/share/fonts/X11/cyrillic, removing from list!
+Could not init font path element /usr/share/fonts/X11/100dpi/:unscaled, removing from list!
+Could not init font path element /usr/share/fonts/X11/75dpi/:unscaled, removing from list!
+Could not init font path element /usr/share/fonts/X11/100dpi, removing from list!
+Could not init font path element /usr/share/fonts/X11/75dpi, removing from list!
+Could not init font path element built-ins, removing from list!
+</code></pre><p>其实这个错误是不影响你远程连接Linux桌面的，如果你不是特别完美主义的话，到这儿可以不管它了。但是你还是想要解决的话，方法还是有的，解决办法：</p>
+<pre><code>sudo aptitude install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
+</code></pre>
       
 
       
@@ -224,6 +306,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -347,6 +439,17 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2016/09/26/使用VNC连接远程Linux桌面/", 
+    sourceId: "使用VNC连接远程Linux桌面",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
   
 
@@ -380,7 +483,7 @@
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -458,11 +561,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">intellij</a>
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +585,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">OpenGL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +601,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Android,自定义View</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,23 +625,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java解惑</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">LintCode</a>
               </li>
             
             <div class="clearfix"></div>
@@ -579,14 +682,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           
             <li class="search-li">
               <a href="http://macshuo.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MacTalk</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://www.ruanyifeng.com/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>阮一峰</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://mindhacks.cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>刘未鹏</a>
             </li>
           
         </ul>
