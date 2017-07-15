@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fupinyou.com">
-  <title>Tag: 注解 | Neulana</title>
+  <title>slots的用法 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello darkness my old friend.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Neulana">
-<meta property="og:url" content="http://fupinyou.com/tags/注解/index.html">
+  <meta name="description" content="其实平时编程很少用到__slots__，这里先说结论：当你创建的类有上百万甚至是千万个实例时再考虑用__slots__,Donald Knuth说过：过早的优化是万恶之源，因为使用__slots__之后，类之间的协作变得极难维护。 众所周知，Python里面的类的所有属性其实是放在一个dict里面的，你可以通过Instance.__dict__看到一个对象的所有属性。Python是一门动态语言，可">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slots的用法">
+<meta property="og:url" content="http://fupinyou.com/2017/07/15/slots的用法/index.html">
 <meta property="og:site_name" content="Neulana">
-<meta property="og:description" content="Hello darkness my old friend.">
+<meta property="og:description" content="其实平时编程很少用到__slots__，这里先说结论：当你创建的类有上百万甚至是千万个实例时再考虑用__slots__,Donald Knuth说过：过早的优化是万恶之源，因为使用__slots__之后，类之间的协作变得极难维护。 众所周知，Python里面的类的所有属性其实是放在一个dict里面的，你可以通过Instance.__dict__看到一个对象的所有属性。Python是一门动态语言，可">
+<meta property="og:updated_time" content="2017-07-15T09:33:34.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neulana">
-<meta name="twitter:description" content="Hello darkness my old friend.">
+<meta name="twitter:title" content="slots的用法">
+<meta name="twitter:description" content="其实平时编程很少用到__slots__，这里先说结论：当你创建的类有上百万甚至是千万个实例时再考虑用__slots__,Donald Knuth说过：过早的优化是万恶之源，因为使用__slots__之后，类之间的协作变得极难维护。 众所周知，Python里面的类的所有属性其实是放在一个dict里面的，你可以通过Instance.__dict__看到一个对象的所有属性。Python是一门动态语言，可">
   
   
     <link rel="icon" href="http://7xq9sc.com1.z0.glb.clouddn.com/2016-09-25_150850.png">
@@ -178,48 +180,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-slots的用法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/12/浅谈Java中的注解/" class="archive-article-date">
-  	<time datetime="2016-03-12T14:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/12/浅谈Java中的注解/">浅谈Java中的注解</a>
+    <h1 class="article-title" itemprop="name">
+      slots的用法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/15/slots的用法/" class="archive-article-date">
+  	<time datetime="2017-07-15T06:23:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实平时编程很少用到__slots__，这里先说结论：当你创建的类有上百万甚至是千万个实例时再考虑用__slots__,Donald Knuth说过：过早的优化是万恶之源，因为使用__slots__之后，类之间的协作变得极难维护。</p>
+<p>众所周知，Python里面的类的所有属性其实是放在一个dict里面的，你可以通过Instance.__dict__看到一个对象的所有属性。Python是一门动态语言，可以在运行时动态的为对象添加和删除属性，因此这个dict是可读可写的。在Python中，为了提高dict的访问速度，dict内部实现时用到了哈希表（hash table)的技术。<br><a id="more"></a></p>
+<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><p>哈希表也叫做散列表，哈希表的value是存在一个数组里面的，dict还要求key必须是可hash的，像是int、str、tuple、frozenset就是可哈希的，而list、dict、set就不是可哈希的。为什么有这个要求呢？就是因为dict背后是哈希函数，哈希函数的输入是key，输出是哈希表数组中的索引位置。 哈希函数的实现方式决定了哈希表的搜索效率。具体操作过程是：<br>1.数据添加：把key通过哈希函数转换成一个整型数字，然后就将该数字对数组长度进行取余，取余结果就当作数组的下标，将value存储在以该数字为下标的数组空间里。<br>2.数据查询：再次使用哈希函数将key转换为对应的数组下标，并定位到数组的位置获取value。<br>多说一句，当数据量增大时，还是可能会发生哈希冲突的，一般有两种方法解决哈希冲突：链接法（分离链接法）和开放寻址法，这里就不展开细说了。简单的说前者就是在哈希冲突的地方，将相同的key以链表的形式扩展，后者就是用一个探测函数继续向后找，直到找到可以存放当前冲突的key。</p>
+<h2 id="使用-slots-来优化"><a href="#使用-slots-来优化" class="headerlink" title="使用__slots__来优化"></a>使用__slots__来优化</h2><p>上面说到dict内部是哈希表，哈希表其实是一种空间换时间的策略，提高了速度就要付出更多的内存代价。所以结论就是dict会浪费很多RAM，当你创建成千上万个对象时更是如此。__slots__方法就是告诉Python不要用dict存储我的实例属性，而是用一个固定大小的集合来存储。__slots__带来的好处：<br>1.更快的属性访问速度；<br>2.节省内存。<br>节省的内存空间来自：<br>1.将属性存储在slots里面，而不是__dict__里面；<br>2.实例不能再动态添加属性，必须是__slots__里面声明的那些属性，而且不能有弱引用的实例。其实不是绝对的，因为你也可以将__dict__和__weakref__加入到__slots__中。<br>测试__slots__的效果：</p>
+<pre><code class="python">import timeit
+
+class Foo(object): __slots__ = &#39;foo&#39;,
+
+class Bar(object): pass
+
+slotted = Foo()
+not_slotted = Bar()
+
+def get_set_delete_fn(obj):
+    def get_set_delete():
+        obj.foo = &#39;foo&#39;
+        obj.foo
+        del obj.foo
+    return get_set_delete
+
+
+# 测试
+&gt;&gt;&gt; min(timeit.repeat(get_set_delete_fn(slotted)))
+0.2846834529991611
+&gt;&gt;&gt; min(timeit.repeat(get_set_delete_fn(not_slotted)))
+0.3664822799983085
+</code></pre>
+<p>从上面的测试代码可以看到：属性的访问速度提高了差不多30%。</p>
+<h2 id="使用-slots-的注意事项"><a href="#使用-slots-的注意事项" class="headerlink" title="使用__slots__的注意事项"></a>使用__slots__的注意事项</h2><p>1.你的类必须显示声明继承自object；<br>2.必须声明类变量__slots__，可以是list、set，它包含的值就是你的类中将要使用的属性的名字；<br>3.为了拒绝动态的添加属性，你不能将’__dict__‘添加到__slots__中；<br>4.多继承时，如果几个父类都已经声明了非空的__slots__，这时多继承的写法会报错，正确的做法是将所有父类声明的属性挪到子类里面来。</p>
+<h2 id="使用slots的典型例子"><a href="#使用slots的典型例子" class="headerlink" title="使用slots的典型例子"></a>使用slots的典型例子</h2><p>禁止动态添加属性：</p>
+<pre><code class="python">class Base(object):
+    __slots__ = ()
+
+# 测试
+&gt;&gt;&gt; b = Base()
+&gt;&gt;&gt; b.a = &#39;a&#39;
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#38&gt;&quot;, line 1, in &lt;module&gt;
+    b.a = &#39;a&#39;
+AttributeError: &#39;Base&#39; object has no attribute &#39;a&#39;
+</code></pre>
+<p>添加a属性时失败，你可以写一个子类来继承它：</p>
+<pre><code class="python">class Child(Base):
+    __slots__ = (&#39;a&#39;,)
+
+
+&gt;&gt;&gt; c = Child()
+&gt;&gt;&gt; c.a = &#39;a&#39;
+&gt;&gt;&gt; c.b = &#39;b&#39;
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#42&gt;&quot;, line 1, in &lt;module&gt;
+    c.b = &#39;b&#39;
+AttributeError: &#39;Child&#39; object has no attribute &#39;b&#39;
+</code></pre>
+<p>如果你想要动态的添加属性，只需要将__dict__添加到__slots__中即可，但是这里需要注意的是：不能在子类的__slots__里面添加父类的__slots__里面已经存在的属性名，看到没，__slots__的限制还是蛮多的，稍有不慎就会出错。</p>
+<pre><code class="python">class SlottedWithDict(Child):
+    __slots__ = (&#39;__dict__&#39;, &#39;b&#39;)
+
+&gt;&gt;&gt; swd = SlottedWithDict()
+&gt;&gt;&gt; swd.a = &#39;a&#39;
+&gt;&gt;&gt; swd.b = &#39;b&#39;
+&gt;&gt;&gt; swd.c = &#39;c&#39;
+&gt;&gt;&gt; swd.__dict__
+{&#39;c&#39;: &#39;c&#39;}
+</code></pre>
+<p>从上面可以看到，’a’和’b’都不在__dict__里的。</p>
+<p>也许你不想在子类中声明__slots__，这样你仍然可以得到父类声明__slots__的好处，即父类那些属性在子类中还是存储在slots中而非__dict__中的，但是这种写法就不能禁止动态添加属性了，具体看下面代码：</p>
+<pre><code class="python">&gt;&gt;&gt; class NoSlots(Child): pass
+&gt;&gt;&gt; ns = NoSlots()
+&gt;&gt;&gt; ns.a = &#39;a&#39;
+&gt;&gt;&gt; ns.b = &#39;b&#39;
+&gt;&gt;&gt; ns.__dict__
+{&#39;b&#39;: &#39;b&#39;}
+</code></pre>
+<p>上面的’a’仍然是存储在slots里面的，而且动态添加了属性’b’。</p>
+<p>多继承时需要注意以下问题：</p>
+<pre><code class="python">&gt;&gt;&gt; class BaseA(object): __slots__ = (&#39;a&#39;,)
+&gt;&gt;&gt; class BaseB(object): __slots__ = (&#39;b&#39;,)
+&gt;&gt;&gt; class Child(BaseA, BaseB): __slots__ = ()
+Traceback (most recent call last):
+  File &quot;&lt;pyshell#68&gt;&quot;, line 1, in &lt;module&gt;
+    class Child(BaseA, BaseB): __slots__ = ()
+TypeError: Error when calling the metaclass bases
+    multiple bases have instance lay-out conflict
+</code></pre>
+<p>解决的办法前面已经说过了，就是移除父类__slots__中的属性，集中到你有很多实例的子类的__slots__中：</p>
+<pre><code class="python">&gt;&gt;&gt; class BaseA(object): __slots__ = ()
+&gt;&gt;&gt; class BaseB(object): __slots__ = ()
+&gt;&gt;&gt; class Child(BaseA, BaseB): __slots__ = (&#39;a&#39;, &#39;b&#39;)
+&gt;&gt;&gt; c = Child
+&gt;&gt;&gt; c.a = &#39;a&#39;
+&gt;&gt;&gt; c.b = &#39;b&#39;
+&gt;&gt;&gt; c.c = &#39;c&#39;
+&gt;&gt;&gt; c.__dict__
+&lt;dictproxy object at 0x10C944B0&gt;
+&gt;&gt;&gt; c.__dict__[&#39;c&#39;]
+&#39;c&#39;
+</code></pre>
+<h2 id="在-slots-中添加-dict-会发生什么"><a href="#在-slots-中添加-dict-会发生什么" class="headerlink" title="在__slots__中添加__dict__会发生什么"></a>在__slots__中添加__dict__会发生什么</h2><p>前面说了__slots__的出现是为了节省内存空间，那么在__slots__中加入__dict__还能节省内存空间吗？答案是肯定的。但是只能为那些出现在__slots__而不是出现在__dict__里面的属性节省内存。</p>
+<h2 id="weakref"><a href="#weakref" class="headerlink" title="__weakref__"></a>__weakref__</h2><p>__weakref__就是弱引用的意思，当一个对象只有弱引用时，Python的垃圾收集器仍然会将它回收掉。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707005011.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://7xq9sc.com1.z0.glb.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20170707004959.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">注解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -232,17 +363,98 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://fupinyou.com/2017/07/15/slots的用法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/07/04/谈谈Python中的yield关键字/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">谈谈Python中的yield关键字</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://fupinyou.com/2017/07/15/slots的用法/", 
+    sourceId: "slots的用法",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -265,9 +477,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
