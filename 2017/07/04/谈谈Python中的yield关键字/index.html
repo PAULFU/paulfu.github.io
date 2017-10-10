@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://fupinyou.com">
+  <link rel="dns-prefetch" href="http://neulana.com">
   <title>谈谈Python中的yield关键字 | Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="好久没有在这儿写字了，感觉已经要长草啦！ 近段时间倒是看了不少分享Python的文章，发现大多是一些速成手册，少有对于一个问题深究下去的，这类文章知识点过于琐碎，难于消化成为自己的。所以我想写的文章是对于一个问题深入剖析，let’s go! 为了理解什么是yield，首先要理解什么是生成器（generators）；而为了理解生成器，你还得先知道可迭代对象（iterables）。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="谈谈Python中的yield关键字">
-<meta property="og:url" content="http://fupinyou.com/2017/07/04/谈谈Python中的yield关键字/index.html">
+<meta property="og:url" content="http://neulana.com/2017/07/04/谈谈Python中的yield关键字/index.html">
 <meta property="og:site_name" content="Neulana">
 <meta property="og:description" content="好久没有在这儿写字了，感觉已经要长草啦！ 近段时间倒是看了不少分享Python的文章，发现大多是一些速成手册，少有对于一个问题深究下去的，这类文章知识点过于琐碎，难于消化成为自己的。所以我想写的文章是对于一个问题深入剖析，let’s go! 为了理解什么是yield，首先要理解什么是生成器（generators）；而为了理解生成器，你还得先知道可迭代对象（iterables）。">
 <meta property="og:updated_time" content="2017-07-04T16:49:49.843Z">
@@ -390,7 +390,7 @@ $100
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://fupinyou.com/2017/07/04/谈谈Python中的yield关键字/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://neulana.com/2017/07/04/谈谈Python中的yield关键字/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -431,7 +431,7 @@ $100
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://fupinyou.com/2017/07/04/谈谈Python中的yield关键字/", 
+    url: "http://neulana.com/2017/07/04/谈谈Python中的yield关键字/", 
     sourceId: "谈谈Python中的yield关键字",
     productKey: "true",
     target: "cloud-tie-wrapper"
@@ -558,6 +558,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -566,7 +570,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -574,15 +578,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,11 +590,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,10 +599,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,6 +611,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
               </li>
             
             <div class="clearfix"></div>

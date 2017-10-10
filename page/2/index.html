@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://fupinyou.com">
+  <link rel="dns-prefetch" href="http://neulana.com">
   <title>Neulana</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hello darkness my old friend.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Neulana">
-<meta property="og:url" content="http://fupinyou.com/page/2/index.html">
+<meta property="og:url" content="http://neulana.com/page/2/index.html">
 <meta property="og:site_name" content="Neulana">
 <meta property="og:description" content="Hello darkness my old friend.">
 <meta name="twitter:card" content="summary">
@@ -179,6 +179,78 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Android-View的事件分发机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/28/Android-View的事件分发机制/">Android View的事件分发机制</a>
+    </h1>
+  
+
+        
+        <a href="/2016/05/28/Android-View的事件分发机制/" class="archive-article-date">
+  	<time datetime="2016-05-28T11:06:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android中，当多个View嵌套使用时，往往会发生滑动冲突的问题，所谓滑动冲突，举个例子，子View嵌套在父View中，而子View和父View的滑动方向都是垂直方向，这时当用户滑动屏幕的时候，就应该判断这个滑动时间应该传给哪个View去处理，这就是滑动冲突问题。当然，不止这一种滑动冲突的情形，只要当发生View的嵌套就有可能发生滑动冲突。而想要解决这种问题，就需要对View的事件分发机制有所了解。这里的View不只是View类，还包含ViewGroup类，View是一种特殊的View，他里面可以包含其他的子View或子ViewGroup，而View则不能包含其他的View或ViewGroup。</p>
+        
+          <a class="article-more-a" href="/2016/05/28/Android-View的事件分发机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android,事件分发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/05/28/Android-View的事件分发机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-TCP-UDP知识总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -872,78 +944,6 @@
 
 
   
-    <article id="post-读《Java解惑》的心得-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/读《Java解惑》的心得-一/">读《Java解惑》的心得&lt;一&gt;</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/12/读《Java解惑》的心得-一/" class="archive-article-date">
-  	<time datetime="2016-03-12T15:38:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.当取余操作返回一个非零的结果时，它与左操作数具有相同的正负号。例子：判断奇偶数。<br>2.并不是所有的小数都可以用二进制浮点数精确表示，比如0.1  0.01   和其他任何负次幂，还有10也是。二进制浮点对于货币计算是非常不合适的。解决办法就是改变单位，从而是浮点数变成整数，还可以用new BIg Decimal(String)构造器，而千万不要用Big Decimal(double)。后一个构造器将用他的参数的精确值来创建一个实例，相当于还是前面讲的那个问题！<br>
-        
-          <a class="article-more-a" href="/2016/03/12/读《Java解惑》的心得-一/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java解惑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术/" class="article-tag-list-link color3">技术</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/12/读《Java解惑》的心得-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1064,6 +1064,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -1072,7 +1076,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,15 +1084,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JIRA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,11 +1096,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1109,10 +1105,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1125,6 +1117,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">testtags</a>
               </li>
             
             <div class="clearfix"></div>
